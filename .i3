@@ -1,0 +1,1 @@
+/home/vozhyk/.i3
