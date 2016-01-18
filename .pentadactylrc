@@ -1,1 +1,171 @@
-/home/vozhyk/.pentadactylrc
+"hg6927
+
+loadplugins '\.(js|penta)$'
+group user
+set hintkeys=htnsaoeudigcrlpfymwvzqjkxb()}+{][!&
+
+hi FontFixed -append font-size: 12pt !important;
+
+set! ui.key.menuAccessKey=0
+set! ui.key.menuAccessKeyFocuses=false
+
+set defsearch=g
+"set tabclose=opener,previous,right,left
+"set tabopen=link:groupright,orphan:groupright,external:end
+
+map <C-Down> <C-d>
+map <C-Up> <C-u>
+map <C-Left> <C-u>
+map <C-j> <C-d>
+map <C-k> <C-u>
+
+map \\ ]]
+map gc gT
+map g@ g^
+map gr g^
+map gl g$
+map -ex g) tabmove $
+map -ex <C-b> set guioptions+=T
+map -ex <C-S-b> set go-=T
+map <C-@> <C-^>
+map <A-@> <C-^>
+map <f4> <C-^>
+
+cmap <C-c> <ESC>
+cmap <C-g> <ESC>
+
+map <A-t> j
+map <A-c> k
+map <A-h> h
+map <A-n> l
+map <A-a> :
+map <A-m> <Return>
+map <C-m> <Return>
+map <A-g> H
+map <A-r> L
+
+map F ;t
+map d <C-v><C-w>
+
+cmap <A-c>   <Up>
+cmap <A-t>   <Down>
+cmap <A-h>   <Left>
+cmap <A-n>   <Right>
+cmap <A-g>   <C-Left>
+cmap <A-r>   <C-Right>
+cmap <A-d>   <Home>
+cmap <A-S-d> <End>
+cmap <A-e>   <BS>
+cmap <A-u>   <Del>
+cmap <A-.>   <C-BS>
+cmap <A-p>   <C-Del>
+cmap <A-m>   <Return>
+
+imap <A-c>   <Up>
+imap <A-t>   <Down>
+imap <A-h>   <Left>
+imap <A-n>   <Right>
+imap <A-g>   <C-Left>
+imap <A-r>   <C-Right>
+imap <A-d>   <Home>
+imap <A-S-d> <End>
+imap <A-e>   <BS>
+imap <A-u>   <Del>
+imap <A-.>   <C-w>
+imap -builtin <A-p>   <A-d>
+imap <A-m>   <Return>
+imap <C-m> <Return>
+
+"map <Menu> :
+
+" cyrillic
+map гл gt
+map гЛ gT
+map гш gc
+map гщ gr
+map гз gl
+map гё g$
+map 00 ]]
+map <C-Ъ> <C-^>
+map <C-ъ> <C-@>
+map <C-\'> <C-@>
+
+map Ф A
+map Т B
+map Ш C
+map Р D
+map В E
+map Н F
+map Г G
+map О H
+map П I
+map С J
+map М K
+map З L
+map Ь M
+map Д N
+map Ы O
+map К P
+map Ч Q
+map Щ R
+map Ў R
+map Ж S
+map Л T
+map А U
+map Ю V
+map Б W
+map И X
+map Е Y
+
+map ф a
+map т b
+map ш c
+map р d
+map в e
+map н f
+map г g
+map о h
+map п i
+map с j
+map м k
+map з l
+map ь m
+map д n
+map ы o
+map к p
+map ч q
+map щ r
+map ў r
+map ж s
+map л t
+map а u
+map ю v
+map б w
+map и x
+map і x
+map е y
+
+map й ;
+map ц ,
+map у .
+map х /
+map ъ @
+map э -
+map я '
+
+map Й :
+map Ц <
+map У >
+map Х ?
+map Ъ ^
+map Э _
+map Я "
+
+map ё $
+map Ё \~
+map ё $
+
+map Ё ~
+map № {
+
+" vim: set ft=pentadactyl:

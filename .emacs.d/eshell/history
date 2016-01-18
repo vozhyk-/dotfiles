@@ -1,0 +1,8 @@
+load-path
+(print load-path)
+rx
+(rx)
+(rx (not "x"))
+(rx (not "[x]"))
+man rx
+(rx (not "x") "y")
