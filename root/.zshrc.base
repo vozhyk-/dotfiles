@@ -1,0 +1,7 @@
+if [ ! -z "$INSIDE_EMACS" ]
+then
+    export EDITOR=/home/vozhyk/bin/eu-root
+    alias n='$EDITOR'
+fi
+
+PS1='%D{%F %T} %B%F{red}%m%k %B%F{blue}%~ %# %b%f%k'
