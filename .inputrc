@@ -1,0 +1,18 @@
+$include /etc/inputrc
+
+"\eh": backward-char
+"\en": forward-char
+"\ec": previous-history
+"\et": next-history
+
+"\eg": backward-word
+"\er": forward-word
+"\ed": beginning-of-line
+"\eD": end-of-line
+
+"\ee": backward-delete-char
+"\eu": delete-char
+"\e.": backward-kill-word
+"\ep": kill-word
+
+"\em": accept-line

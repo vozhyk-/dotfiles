@@ -1,0 +1,367 @@
+# /etc/zsh/zshrc: system-wide .zshrc file for zsh(1).
+#
+# This file is sourced only for interactive shells. It
+# should contain commands to set up aliases, functions,
+# options, key bindings, etc.
+#
+# Global Order: zshenv, zprofile, zshrc, zlogin
+
+READNULLCMD=${PAGER:-/usr/bin/pager}
+
+# An array to note missing features to ease diagnosis in case of problems.
+typeset -ga debian_missing_features
+
+if [[ -z "$DEBIAN_PREVENT_KEYBOARD_CHANGES" ]] &&
+   [[ "$TERM" != 'emacs' ]]
+then
+
+    typeset -A key
+    key=(
+        BackSpace  "${terminfo[kbs]}"
+        Home       "${terminfo[khome]}"
+        End        "${terminfo[kend]}"
+        Insert     "${terminfo[kich1]}"
+        Delete     "${terminfo[kdch1]}"
+        Up         "${terminfo[kcuu1]}"
+        Down       "${terminfo[kcud1]}"
+        Left       "${terminfo[kcub1]}"
+        Right      "${terminfo[kcuf1]}"
+        PageUp     "${terminfo[kpp]}"
+        PageDown   "${terminfo[knp]}"
+    )
+
+    function bind2maps () {
+        local i sequence widget
+        local -a maps
+
+        while [[ "$1" != "--" ]]; do
+            maps+=( "$1" )
+            shift
+        done
+        shift
+
+        sequence="${key[$1]}"
+        widget="$2"
+
+        [[ -z "$sequence" ]] && return 1
+
+        for i in "${maps[@]}"; do
+            bindkey -M "$i" "$sequence" "$widget"
+        done
+    }
+
+    bind2maps emacs             -- BackSpace   backward-delete-char
+    bind2maps       viins       -- BackSpace   vi-backward-delete-char
+    bind2maps             vicmd -- BackSpace   vi-backward-char
+    bind2maps emacs             -- Home        beginning-of-line
+    bind2maps       viins vicmd -- Home        vi-beginning-of-line
+    bind2maps emacs             -- End         end-of-line
+    bind2maps       viins vicmd -- End         vi-end-of-line
+    bind2maps emacs viins       -- Insert      overwrite-mode
+    bind2maps             vicmd -- Insert      vi-insert
+    bind2maps emacs             -- Delete      delete-char
+    bind2maps       viins vicmd -- Delete      vi-delete-char
+    bind2maps emacs viins vicmd -- Up          up-line-or-history
+    bind2maps emacs viins vicmd -- Down        down-line-or-history
+    bind2maps emacs             -- Left        backward-char
+    bind2maps       viins vicmd -- Left        vi-backward-char
+    bind2maps emacs             -- Right       forward-char
+    bind2maps       viins vicmd -- Right       vi-forward-char
+
+    # Make sure the terminal is in application mode, when zle is
+    # active. Only then are the values from $terminfo valid.
+    if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+        function zle-line-init () {
+            emulate -L zsh
+            printf '%s' ${terminfo[smkx]}
+        }
+        function zle-line-finish () {
+            emulate -L zsh
+            printf '%s' ${terminfo[rmkx]}
+        }
+        zle -N zle-line-init
+        zle -N zle-line-finish
+    else
+        for i in {s,r}mkx; do
+            (( ${+terminfo[$i]} )) || debian_missing_features+=($i)
+        done
+        unset i
+    fi
+
+    unfunction bind2maps
+
+fi # [[ -z "$DEBIAN_PREVENT_KEYBOARD_CHANGES" ]] && [[ "$TERM" != 'emacs' ]]
+
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
+                                           /usr/local/bin  \
+                                           /usr/sbin       \
+                                           /usr/bin        \
+                                           /sbin           \
+                                           /bin            \
+                                           /usr/X11R6/bin
+
+(( ${+aliases[run-help]} )) && unalias run-help
+autoload -Uz run-help
+
+# If you don't want compinit called here, place the line
+# skip_global_compinit=1
+# in your $ZDOTDIR/.zshenv or $ZDOTDIR/.zprofile
+if [[ -z "$skip_global_compinit" ]]; then
+  autoload -U compinit
+  compinit
+fi
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-/]=* r:|=*'
+zstyle ':completion:*' max-errors 2 numeric
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle :compinstall filename '/etc/zsh/zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+
+zstyle ':completion:*' accept-exact-dirs 'yes'
+
+## Z Gentoo:uskaha gida (http://www.gentoo.org/doc/en/zsh.xml)
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+## Historyja
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+## notify - adrazu havaryc', kali bg praces skonchyusia
+## extendedglob - gla krutych glob:au z regexp:ami, jak "ls -d ^..*"(usie, aprocz .zshrc, ...)
+setopt appendhistory notify dvorak hist_ignore_all_dups extendedglob autocd
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+
+## Heta dla kalarovaha prompt:a
+autoload -U compinit promptinit
+compinit
+promptinit; prompt gentoo
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+reset-prompt-and-accept-line() {
+    zle reset-prompt
+    zle accept-line
+}
+
+zle -N reset-prompt-and-accept-line
+
+## Narmalnyja knopki
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -A key
+
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+#key[Up]=${terminfo[kcuu1]}
+#key[Down]=${terminfo[kcud1]}
+#key[Left]=${terminfo[kcub1]}
+#key[Right]=${terminfo[kcuf1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+# setup key accordingly
+[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+[[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
+[[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
+#[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-history
+#[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
+[[ -n "${key[PageUp]}"    ]]  && bindkey  "${key[PageUp]}"    beginning-of-history
+[[ -n "${key[PageDown]}"    ]]  && bindkey  "${key[PageDown]}"    end-of-history
+[[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
+[[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+
+bindkey ';5D' emacs-backward-word ## Ctrl-str. uleva
+bindkey ';5C' emacs-forward-word  ##        || uprava
+bindkey ';3D' emacs-backward-word
+bindkey ';3C' emacs-forward-word
+
+# ErgoEmacs keys
+
+bindkey '^[c' up-line-or-history
+bindkey '^[t' down-line-or-history
+bindkey '^[h' backward-char
+bindkey '^[n' forward-char
+bindkey '^[g' emacs-backward-word
+bindkey '^[r' emacs-forward-word
+
+bindkey '^[C' up-line-or-search
+bindkey '^[T' down-line-or-search
+
+bindkey '^[d' beginning-of-line
+bindkey '^[D' end-of-line
+
+bindkey '^m' reset-prompt-and-accept-line
+bindkey '^[m' reset-prompt-and-accept-line
+
+bindkey '^[e' backward-delete-char
+bindkey '^[u' delete-char
+bindkey '^[.' backward-kill-word
+bindkey '^[p' kill-word
+bindkey '^[i' kill-line
+bindkey '^[I' backward-kill-line
+
+bindkey '^[k' yank
+bindkey '^[K' yank-pop
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+function zle-line-init () {
+    echoti smkx &> /dev/null ## &>/dev/null, kab na Emacs:ie nie lajausia
+}
+function zle-line-finish () {
+    echoti rmkx &>/dev/null
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+## Kab nie prapuskau / i ...
+export WORDCHARS=''
+
+## Z bash:a
+hide_yakuake(){
+    ws=$(qdbus org.kde.yakuake /yakuake/MainWindow_1 \
+         Get com.trolltech.Qt.QWidget visible)
+    if [[ "$?" == 0 && "$ws" == "true" ]]; then
+        qdbus org.kde.yakuake /yakuake/window toggleWindowState > /dev/null
+    fi
+}
+
+export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support"
+
+export PYTHONPATH=/home/vozhyk/dev/devj/python/modules
+
+source /home/vozhyk/dev/bash/devsmth
+source /home/vozhyk/dev/devj/bash/goback
+export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin:/usr/share/android-studio/data/sdk/tools:/usr/share/android-studio/data/sdk/platform-tools"
+
+sv(){
+    act="$1"; shift
+    for i in $@
+    do
+        /etc/init.d/"$i" "$act"
+    done
+}
+alias esv='sv start'
+alias dsv='sv stop'
+alias rsv='sv restart'
+alias stsv='sv status'
+alias rlsv='sv reload'
+
+#compctl -g '/etc/init.d/*(:s@/etc/init.d/@@)' esv dsv rsv stsv rlsv
+#compdef '_files -W /etc/init.d' esv dsv rsv stsv rlsv
+compdef '_arguments "1:command:(zap sync)" \
+                    "*:service:_files -W /etc/init.d"' sv
+
+tnt(){
+    ping google.com
+}
+
+find-cat(){
+    find /var/portage/portage -mindepth 2 -maxdepth 2 -name "$1" -type d | sed -e 's:^.*/[^/]*/[^/]*/\([^/]*/[^/]*\)$:\1:' 
+}
+
+dh(){
+    pushd . &>/dev/null
+    cd /mnt/by-label
+    for i in *
+    do
+        echo "                                                         :$i"
+        df -h "$i"
+    done
+    popd &>/dev/null
+}
+
+alias nsum="ruby -e 'y = 0
+while (s = gets); s.chomp!
+  y = y + s.to_i
+end
+print y'"
+
+do_every() {
+    sec="$1"
+    shift
+    while true; do
+        eval $@
+        sleep "$sec"
+    done
+}
+
+backup() {
+    cp -va "$1" "$1".b
+}
+mbackup() {
+    mv -v "$1" "$1".b
+}
+
+alias sc='grep "^[[:space:]]*[^#]"'
+
+# ls
+alias l='ls'
+alias ll='ls -l'
+alias lla='ls -lA'
+# 
+alias rr='rm -r'
+alias le='less'
+alias c='cat'
+alias m='man'
+alias chx='chmod +x'
+alias hr='hash -r'
+alias hd='hexdump -C'
+# kill
+alias ka='killall'
+alias kak='killall -KILL'
+alias kk='kill -KILL'
+#
+alias xpid="xprop | grep WM_PID | tr -dc '[:digit:]'"
+# emerge
+alias e='emerge'
+alias eavt='emerge -avt'
+# ssh
+#alias rch='keychain-e && ssh desktop'
+alias ch='ssh root@router'
+alias mosh='mosh --server "LANG=en_US.UTF-8 mosh-server"'
+alias ntmux='mosh neure tmux'
+alias chat='mosh neure tmux a'
+# nano
+alias nano='nano -u -A -w'
+alias n='nano'
+# default options
+#alias rtorrent='TERM="$TERM-256color" rtorrent'
+# mount
+alias mnte='esv mnte'
+alias umnte='dsv mnte'
+alias zmnte='/etc/init.d/mnte zap'
+# -global
+alias -g XARG='-print0 | xargs -0'
+
+h=--help
+
+eval `dircolors ~vozhyk/src/dircolors-solarized/dircolors.256dark`
+# colored completion - use LS_COLORS
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
