@@ -254,10 +254,10 @@ hide_yakuake(){
 
 export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support"
 
-export PYTHONPATH=/home/vozhyk/dev/devj/python/modules
+export PYTHONPATH=/mnt/dev/devj/python/modules
 
-source /home/vozhyk/dev/bash/devsmth
-source /home/vozhyk/dev/devj/bash/goback
+source /mnt/dev/bash/devsmth
+source /mnt/dev/devj/bash/goback
 export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin:/usr/share/android-studio/data/sdk/tools:/usr/share/android-studio/data/sdk/platform-tools"
 
 sv(){

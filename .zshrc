@@ -22,7 +22,7 @@ alias efl='tail -f /var/log/emerge-fetch.log'
 
 alias sn='ssh neure'
 
-#source /home/vozhyk/dev/bash/chat.sh
+#source /mnt/dev/bash/chat.sh
 #nick='vozhyk_'
 #chatfile='/home/vozhyk/read'
 ## pounyja teczki
