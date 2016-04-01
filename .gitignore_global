@@ -28,18 +28,12 @@ tramp
 # reftex files
 *.rel
 
-# AUCTeX auto folder
-/auto/
-
 # cask packages
 .cask/
 dist/
 
 # Flycheck
 flycheck_*.el
-
-# server auth directory
-/server/
 
 # projectiles files
 .projectile
