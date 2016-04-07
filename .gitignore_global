@@ -37,3 +37,6 @@ flycheck_*.el
 
 # projectiles files
 .projectile
+
+# tern ports
+.tern-port
