@@ -147,7 +147,7 @@ bindkey -e
 ## Heta dla kalarovaha prompt:a
 autoload -U compinit promptinit
 compinit
-promptinit; prompt gentoo
+promptinit; #prompt gentoo
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -256,9 +256,9 @@ export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support
 
 export PYTHONPATH=/mnt/dev/devj/python/modules
 
-source /mnt/dev/bash/devsmth
-source /mnt/dev/devj/bash/goback
-export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin:/usr/share/android-studio/data/sdk/tools:/usr/share/android-studio/data/sdk/platform-tools"
+#source /mnt/dev/bash/devsmth
+source /mnt/src/sh-utils/bashrc/goback
+export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin"
 
 sv(){
     act="$1"; shift
@@ -362,6 +362,6 @@ alias -g XARG='-print0 | xargs -0'
 
 h=--help
 
-eval `dircolors ~vozhyk/src/dircolors-solarized/dircolors.256dark`
+eval `dircolors /mnt/src/dircolors-solarized/dircolors.256dark`
 # colored completion - use LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
