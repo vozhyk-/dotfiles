@@ -345,8 +345,11 @@ alias kk='kill -KILL'
 #
 alias xpid="xprop | grep WM_PID | tr -dc '[:digit:]'"
 # emerge
-alias e='emerge'
-alias eavt='emerge -avt'
+#alias e='emerge'
+#alias eavt='emerge -avt'
+# equo
+alias e='equo'
+alias ea='equo i -a'
 # ssh
 #alias rch='keychain-e && ssh desktop'
 alias ch='ssh root@router'
