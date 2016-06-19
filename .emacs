@@ -9,6 +9,7 @@
 ;(require 'darcsum)
 ;(load-file "~/.emacs.d/darcsum")
 ;(load-file "~/.emacs.d/50darcsum")
+(add-hook 'after-init-hook 'global-company-mode)
 
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 (require 'ergoemacs-mode)
@@ -46,6 +47,7 @@
 (global-set-key (kbd "C-r")   'isearch-backward)
 (global-set-key (kbd "M-L")   'enlarge-window)
 ;(global-set-key (kbd "H-R")   'slime-restart-inferior-lisp)
+(global-set-key (kbd "M-<tab>") 'company-complete)
 
 (define-prefix-command 'F9-map)
 (global-set-key (kbd "<f9>") 'F9-map)
