@@ -334,6 +334,10 @@ alias m='man'
 alias chx='chmod +x'
 alias hr='hash -r'
 alias hd='hexdump -C'
+# git
+alias gpf='git push -f'
+alias gps='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias gds='git diff --staged'
 # kill
 alias ka='killall'
 alias kak='killall -KILL'
