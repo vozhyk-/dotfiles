@@ -42,6 +42,8 @@
 (global-set-key [home]      'smart-beginning-of-line)
 (global-set-key (kbd "M-d") 'smart-beginning-of-line)
 
+(global-set-key (kbd "H-M-m") 'smart-open-line-above)
+
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-s")   'isearch-forward)
 (global-set-key (kbd "C-r")   'isearch-backward)
@@ -110,6 +112,15 @@ If point was already at that position, move point to beginning of line."
     (back-to-indentation)
     (and (= oldpos (point))
          (beginning-of-line))))
+
+(defun smart-open-line-above ()
+  "Insert an empty line above the current line.
+Position the cursor at it's beginning, according to the current mode."
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 ;; function decides whether .h file is C or C++ header, sets C++ by
 ;; default because there's more chance of there being a .h without a
