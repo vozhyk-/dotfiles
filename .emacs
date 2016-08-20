@@ -142,6 +142,12 @@ header"
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c-c++-header))
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 
+(ignore-errors
+  (require 'ansi-color)
+  (add-hook 'compilation-filter-hook (lambda ()
+    (when (eq major-mode 'compilation-mode)
+      (ansi-color-apply-on-region compilation-filter-start (point-max))))))
+
 ;;; --- --- --- --- --- --- --- --- language hooks --- --- --- --- --- --- --- ---
 (defun RET-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
