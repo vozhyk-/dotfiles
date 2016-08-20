@@ -11,6 +11,7 @@
 ;(load-file "~/.emacs.d/50darcsum")
 (load-file "~/.gvm/pkgsets/go1.5/global/src/golang.org/x/tools/cmd/oracle/oracle.el")
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 (require 'ergoemacs-mode)
