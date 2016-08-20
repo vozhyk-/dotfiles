@@ -461,3 +461,4 @@ header"
  '(slime-dfl-faces-global-package-function ((t (:foreground "blue"))) t)
  '(slime-dfl-faces-local-function ((t (:foreground "blue"))) t))
 (put 'narrow-to-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
