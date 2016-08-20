@@ -53,6 +53,9 @@
 ;(global-set-key (kbd "H-R")   'slime-restart-inferior-lisp)
 (global-set-key (kbd "M-<tab>") 'company-complete)
 
+(global-set-key (kbd "<f8> c") 'compile)
+(global-set-key (kbd "<f8> <f9>") 'recompile)
+
 (define-prefix-command 'F9-map)
 (global-set-key (kbd "<f9>") 'F9-map)
 
@@ -165,9 +168,7 @@ header"
 
 (defun compiled-lang-hook ()
   (RET-newline-and-indent)
-  (local-set-key "\C-Xc" 'compile)
-  (local-set-key (kbd "<f8> c") 'compile)
-  (local-set-key (kbd "<f8> <f9>") 'recompile))
+  (local-set-key "\C-Xc" 'compile))
 
 (defun pascal-hook ()
   (compiled-lang-hook)
