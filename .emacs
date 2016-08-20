@@ -156,6 +156,9 @@ header"
 (add-hook 'assembler-mode-hook 'asm-hook)
 (add-hook 'c-mode-hook 'C-hook)
 (add-hook 'c++-mode-hook 'C++-hook)
+(add-hook 'go-mode-hook 'go-hook)
+(add-hook 'before-save-hook 'gfmt-before-save)
+
 (delete-selection-mode 1)
 
 (defun lisp-hook ()
@@ -296,6 +299,12 @@ header"
 ;;; --- --- --- --- --- --- --- --- end --- --- --- --- --- --- --- ---
   (maybe-sun-style)
 )
+
+(defun go-hook ()
+  (compiled-lang-hook)
+  (local-set-key (kbd "M-M") 'godef-jump)
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save))
 
 ;(defun kill-buf-emacsclient ()
 ;  (local-set-key "\C-w" 'server-edit))
