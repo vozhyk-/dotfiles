@@ -157,6 +157,8 @@ header"
 (add-hook 'c-mode-hook 'C-hook)
 (add-hook 'c++-mode-hook 'C++-hook)
 (add-hook 'go-mode-hook 'go-hook)
+(add-hook 'js-mode-hook 'js-hook)
+
 (add-hook 'before-save-hook 'gfmt-before-save)
 
 (delete-selection-mode 1)
@@ -305,6 +307,13 @@ header"
   (local-set-key (kbd "M-M") 'godef-jump)
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save))
+
+(defun js-hook ()
+  (RET-newline-and-indent)
+  (setq-local indent-tabs-mode nil)
+  (tern-mode 1)
+  (local-set-key (kbd "M-M") 'tern-find-definition))
+
 
 ;(defun kill-buf-emacsclient ()
 ;  (local-set-key "\C-w" 'server-edit))
