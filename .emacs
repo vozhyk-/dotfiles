@@ -320,7 +320,7 @@ header"
 (defun go-hook ()
   (compiled-lang-hook)
   (local-set-key (kbd "M-M") 'godef-jump)
-  (setq gofmt-command "goimports")
+  ;(setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save))
 
 (defun js-hook ()
