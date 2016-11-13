@@ -29,7 +29,7 @@
 
 ;(load-library 'zlc)
 
-;(set-face-attribute 'default nil :height 90)
+(set-face-attribute 'default nil :height 100)
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/color-theme-solarized-20130307.1350/")
 (load-theme 'solarized t)
 
