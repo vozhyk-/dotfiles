@@ -18,6 +18,11 @@
 ;(load-file "~/.emacs.d/elpa/ergoemacs-keybindings-20120814.1528/ergoemacs-mode.el")
 (ergoemacs-mode 1)
 
+(require 'helm-config)
+(global-set-key (kbd "C-o") #'helm-find-files)
+(global-set-key (kbd "M-a") #'helm-M-x)
+(helm-mode 1)
+
 ;(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20130516.8")
 (require 'undo-tree)
 (global-undo-tree-mode 1)
@@ -67,6 +72,7 @@
 (define-key F9-map (kbd "g") 'previous-buffer)
 (define-key F9-map (kbd "r") 'next-buffer)
 
+(global-set-key (kbd "C-c a") 'helm-do-ag)
 (define-key key-translation-map (kbd "M-c") (kbd "<up>"))
 (define-key key-translation-map (kbd "M-t") (kbd "<down>"))
 (define-key key-translation-map (kbd "M-h") (kbd "<left>"))
