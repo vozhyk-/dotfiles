@@ -15,6 +15,8 @@ set $mod Mod4
 #set $S Shift
 
 set $term konsole
+set $shell zsh
+set $file_manager dolphin
 set $arch schroot
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -193,7 +195,7 @@ mode "exec" {
 	bindsym Shift+e exec emacs; mode "default"
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
-        bindsym d exec dolphin; mode "default"
+        bindsym d exec $file_manager; mode "default"
         bindsym f exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
         bindsym Shift+c exec $arch chromium; mode "default"
