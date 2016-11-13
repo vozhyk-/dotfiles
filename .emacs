@@ -365,8 +365,6 @@ header"
 (define-key ggtags-mode-map (kbd "S-RET") 'ggtags-find-tag-dwim)
 (define-key ggtags-mode-map (kbd "M-M")   'ggtags-find-tag-dwim)
 (define-key ggtags-mode-map (kbd "C-G")   'pop-tag-mark)
-
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 ;;; --- --- --- --- --- --- --- --- end --- --- --- --- --- --- --- ---
 
 ;;; --- --- --- --- --- --- --- --- Sessions --- --- --- --- --- --- --- ---
