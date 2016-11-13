@@ -134,6 +134,7 @@ bindsym Control+XF86Back workspace prev
 bindsym Control+XF86Forward workspace next
 
 bindsym $mod+s workspace back_and_forth
+bindsym $mod+space workspace back_and_forth
 bindsym XF86Launch1 workspace back_and_forth
 
 bindsym Mod1+F7 exec --no-startup-id sudo chvt 7
