@@ -335,6 +335,6 @@ exec --no-startup-id ~/.xinitrc
 #exec --no-startup-id xcompmgr
 exec --no-startup-id compton
 #exec --no-startup-id random-wallpaper
-exec --no-startup-id set-wallpaper ~/wallpapers-random/Xenogears.full.384097.jpg
+exec --no-startup-id set-wallpaper /usr/share/wallpapers/FallenLeaf/contents/images/1920x1080.jpg
 exec --no-startup-id dunst
 #exec --no-startup-id conky # --no-startup-id might not be necessary
