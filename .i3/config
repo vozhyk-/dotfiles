@@ -186,6 +186,8 @@ mode "resize" {
         bindsym Right resize grow width 10 px or 5 ppt
 
         # back to normal: Enter or Escape
+        bindsym Control+g mode "default"
+        bindsym $mod+g    mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym space mode "default"
