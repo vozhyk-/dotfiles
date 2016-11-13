@@ -45,8 +45,7 @@ bindsym Control+Mod1+q kill
 
 bindsym $mod+z exec --no-startup-id zsh -i -c kill -STOP `xpid`
 
-# start dmenu (a program launcher)
-bindsym $mod+e exec --no-startup-id dmenu_run
+bindsym $mod+Shift+e exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -209,7 +208,8 @@ mode "exec" {
         bindsym h exec hexchat; mode "default"
         bindsym i exec $term -e 'zsh -i -c chat'; mode "default"
 	bindsym o exec okular; mode "default"
-	bindsym p exec pavucontrol; mode "default"
+	#bindsym p exec pavucontrol; mode "default"
+	bindsym p exec kcmshell5 kcm_pulseaudio; mode "default"
 	bindsym Shift+p exec pidgin; mode "default"
 	bindsym s exec skype; mode "default"
 	bindsym t exec thunderbird; mode "default"
