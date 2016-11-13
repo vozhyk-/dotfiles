@@ -117,10 +117,10 @@ bindsym $mod+ampersand workspace number 1
 bindsym $mod+bracketleft workspace number 2
 bindsym $mod+braceleft workspace number 3: code
 bindsym $mod+braceright workspace number 4: chat
-bindsym $mod+parenleft workspace number 5
-bindsym $mod+equal workspace number 6: torrent
+bindsym $mod+parenleft workspace number 5: im
+bindsym $mod+equal workspace number 6: pw
 bindsym $mod+asterisk workspace number 7: mail
-bindsym $mod+parenright workspace number 8
+bindsym $mod+parenright workspace number 8: vm
 bindsym $mod+plus workspace number 9: flame
 bindsym $mod+bracketright workspace number 10: music
 bindsym $mod+exclam workspace number 11: []
@@ -142,10 +142,10 @@ bindsym $mod+Shift+ampersand move container to workspace number 1; workspace num
 bindsym $mod+Shift+7 move container to workspace number 2; workspace number 2
 bindsym $mod+Shift+braceleft move container to workspace number 3: code; workspace number 3: code
 bindsym $mod+Shift+braceright move container to workspace number 4: chat; workspace number 4: chat
-bindsym $mod+Shift+1 move container to workspace number 5; workspace number 5
-bindsym $mod+Shift+9 move container to workspace number 6; workspace number 6
+bindsym $mod+Shift+1 move container to workspace number 5: im; workspace number 5: im
+bindsym $mod+Shift+9 move container to workspace number 6: pw; workspace number 6: pw
 bindsym $mod+Shift+0 move container to workspace number 7: mail; workspace number 7: mail
-bindsym $mod+Shift+2 move container to workspace number 8; workspace number 8
+bindsym $mod+Shift+2 move container to workspace number 8: vm; workspace number 8: vm
 bindsym $mod+Shift+4 move container to workspace number 9: flame; workspace number 9: flame
 bindsym $mod+Shift+bracketright move container to workspace number 10: music; workspace number 10: music
 bindsym $mod+Shift+exclam move container to workspace number 11: []; workspace number 11: []
