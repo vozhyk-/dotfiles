@@ -73,6 +73,9 @@
 (define-key F9-map (kbd "r") 'next-buffer)
 
 (global-set-key (kbd "C-c a") 'helm-do-ag)
+; TODO bind it only for files under Git
+(global-set-key (kbd "C-c g") 'magit-status)
+
 (define-key key-translation-map (kbd "M-c") (kbd "<up>"))
 (define-key key-translation-map (kbd "M-t") (kbd "<down>"))
 (define-key key-translation-map (kbd "M-h") (kbd "<left>"))
@@ -352,12 +355,12 @@ header"
               (setq-local imenu-create-index-function
                           #'ggtags-build-imenu-index))))
 
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
+(define-key ggtags-mode-map (kbd "C-c t s") 'ggtags-find-other-symbol)
+(define-key ggtags-mode-map (kbd "C-c t h") 'ggtags-view-tag-history)
+(define-key ggtags-mode-map (kbd "C-c t r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c t f") 'ggtags-find-file)
+(define-key ggtags-mode-map (kbd "C-c t c") 'ggtags-create-tags)
+(define-key ggtags-mode-map (kbd "C-c t u") 'ggtags-update-tags)
 
 (define-key ggtags-mode-map (kbd "S-RET") 'ggtags-find-tag-dwim)
 (define-key ggtags-mode-map (kbd "M-M")   'ggtags-find-tag-dwim)
