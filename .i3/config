@@ -156,6 +156,9 @@ bindsym $mod+Shift+exclam move container to workspace number 11: []; workspace n
 bindsym $mod+Shift+g move container to workspace prev; workspace prev
 bindsym $mod+Shift+r move container to workspace next; workspace next
 
+bindsym $mod+F8 move workspace to output left
+bindsym $mod+F9 move workspace to output right
+
 # reload the configuration file
 bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
