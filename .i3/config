@@ -196,7 +196,7 @@ mode "exec" {
 	bindsym Shift+x exec --no-startup-id $term -e xkill; mode "default"
         bindsym z exec $term -e sudo su; mode "default"
         bindsym b exec $term -e bc -l; mode "default"
-	bindsym Shift+e exec emacs; mode "default"
+        bindsym Shift+e exec $shell -c emacs; mode "default"
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
         bindsym d exec $file_manager; mode "default"
