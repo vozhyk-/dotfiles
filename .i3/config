@@ -194,8 +194,8 @@ mode "resize" {
 mode "exec" {
         bindsym x exec $term; mode "default"
 	bindsym Shift+x exec --no-startup-id $term -e xkill; mode "default"
-        bindsym z exec $term -e sudo su; mode "default"
-        bindsym b exec $term -e bc -l; mode "default"
+        bindsym z exec $term -e 'sudo su'; mode "default"
+        bindsym b exec $term -e 'bc -l'; mode "default"
         bindsym Shift+e exec $shell -c emacs; mode "default"
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
@@ -205,7 +205,7 @@ mode "exec" {
         bindsym Shift+c exec $arch chromium; mode "default"
         bindsym l exec links -g google.com; mode "default"
         bindsym h exec hexchat; mode "default"
-        bindsym i exec $term -e zsh -i -c chat; mode "default"
+        bindsym i exec $term -e 'zsh -i -c chat'; mode "default"
 	bindsym o exec okular; mode "default"
 	bindsym p exec pavucontrol; mode "default"
 	bindsym Shift+p exec pidgin; mode "default"
@@ -220,7 +220,7 @@ mode "exec" {
 	bindsym m exec $term -e ncmpcpp; mode "default"
 	bindsym Shift+t exec ktorrent; mode "default"
 	bindsym k exec krusader; mode "default"
-        bindsym n exec $term -e zsh -i -c tnt; mode "default"
+        bindsym n exec $term -e 'zsh -i -c tnt'; mode "default"
 
         bindsym r exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P 'rename workspace: '; mode "default"
 
