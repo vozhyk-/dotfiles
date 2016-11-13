@@ -158,6 +158,9 @@ bindsym $mod+Shift+r move container to workspace next; workspace next
 bindsym $mod+F8 move workspace to output left
 bindsym $mod+F9 move workspace to output right
 
+# lock screen
+#bindsym XF86Sleep exec gnome-screensaver-command -l
+
 # reload the configuration file
 bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
