@@ -27,6 +27,3 @@ alias sn='ssh neure'
 #chatfile='/home/vozhyk/read'
 ## pounyja teczki
 PS1='%D{%F %T} %B%F{green}%n@%m%k %B%F{blue}%~ %# %b%f%k'
-
-[[ -s "/home/vozhyk/.gvm/scripts/gvm" ]] && source "/home/vozhyk/.gvm/scripts/gvm"
-export GOPATH="$GOPATH:/home/vozhyk/dev/go"
