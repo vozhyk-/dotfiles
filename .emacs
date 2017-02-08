@@ -49,7 +49,11 @@
 (global-set-key [home]      'smart-beginning-of-line)
 (global-set-key (kbd "M-d") 'smart-beginning-of-line)
 
+(global-set-key (kbd "<H-return>") 'smart-open-line-above)
 (global-set-key (kbd "H-M-m") 'smart-open-line-above)
+
+(global-set-key (kbd "M-M") 'auto-goto-defun)
+(global-set-key (kbd "<S-return>") 'auto-goto-defun)
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-s")   'isearch-forward)
@@ -135,6 +139,27 @@ Position the cursor at it's beginning, according to the current mode."
   (newline-and-indent)
   (forward-line -1)
   (indent-according-to-mode))
+
+; http://stackoverflow.com/a/8020861/795068
+(defvar auto-goto-defun-function
+  (lambda ()
+    (interactive)
+    (message "Default message"))
+  "Set this to the appropriate goto-defun function for the buffer's major mode")
+(make-variable-buffer-local 'auto-goto-defun-function)
+
+(setq auto-goto-defun-function
+  (lambda (&optional arg)
+    (interactive)
+    (message (concat "No auto-goto-defun-function set"))))
+
+(defun auto-goto-defun (&rest args)
+  "This function run buffer-local function"
+  (interactive)
+  (if (called-interactively-p 'any)   ;To call interactively AND to
+                                      ;be able to have elisp-calls
+    (call-interactively auto-goto-defun-function)
+    (apply auto-goto-defun-function args)))
 
 ;; function decides whether .h file is C or C++ header, sets C++ by
 ;; default because there's more chance of there being a .h without a
@@ -319,7 +344,7 @@ header"
 
 (defun go-hook ()
   (compiled-lang-hook)
-  (local-set-key (kbd "M-M") 'godef-jump)
+  (setq-local auto-goto-defun-function (symbol-function 'godef-jump))
   ;(setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save))
 
@@ -327,7 +352,7 @@ header"
   (RET-newline-and-indent)
   (setq-local indent-tabs-mode nil)
   (tern-mode 1)
-  (local-set-key (kbd "M-M") 'tern-find-definition))
+  (setq-local auto-goto-defun-function (symbol-function 'tern-find-definition)))
 
 
 ;(defun kill-buf-emacsclient ()
