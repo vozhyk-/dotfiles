@@ -3,7 +3,7 @@
 (require 'cl)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/elisp")
 ;(require 'darcsum)
@@ -17,13 +17,18 @@
 ;(load-file "~/.emacs.d/elpa/ergoemacs-keybindings-20120814.1528/ergoemacs-mode.el")
 (ergoemacs-mode 1)
 
+(require 'helm-config)
+(global-set-key (kbd "C-o") #'helm-find-files)
+(global-set-key (kbd "M-a") #'helm-M-x)
+(helm-mode 1)
+
 ;(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20130516.8")
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
 ;(load-library 'zlc)
 
-;(set-face-attribute 'default nil :height 90)
+(set-face-attribute 'default nil :height 100)
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/color-theme-solarized-20130307.1350/")
 (load-theme 'solarized t)
 
@@ -43,7 +48,11 @@
 (global-set-key [home]      'smart-beginning-of-line)
 (global-set-key (kbd "M-d") 'smart-beginning-of-line)
 
+(global-set-key (kbd "<H-return>") 'smart-open-line-above)
 (global-set-key (kbd "H-M-m") 'smart-open-line-above)
+
+(global-set-key (kbd "M-M") 'auto-goto-defun)
+(global-set-key (kbd "<S-return>") 'auto-goto-defun)
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-s")   'isearch-forward)
@@ -65,6 +74,10 @@
 (define-key F9-map (kbd "<f9>") 'save-buffer)
 (define-key F9-map (kbd "g") 'previous-buffer)
 (define-key F9-map (kbd "r") 'next-buffer)
+
+(global-set-key (kbd "C-c a") 'helm-do-ag)
+; TODO bind it only for files under Git
+(global-set-key (kbd "C-c g") 'magit-status)
 
 (define-key key-translation-map (kbd "M-c") (kbd "<up>"))
 (define-key key-translation-map (kbd "M-t") (kbd "<down>"))
@@ -125,6 +138,27 @@ Position the cursor at it's beginning, according to the current mode."
   (newline-and-indent)
   (forward-line -1)
   (indent-according-to-mode))
+
+; http://stackoverflow.com/a/8020861/795068
+(defvar auto-goto-defun-function
+  (lambda ()
+    (interactive)
+    (message "Default message"))
+  "Set this to the appropriate goto-defun function for the buffer's major mode")
+(make-variable-buffer-local 'auto-goto-defun-function)
+
+(setq auto-goto-defun-function
+  (lambda (&optional arg)
+    (interactive)
+    (message (concat "No auto-goto-defun-function set"))))
+
+(defun auto-goto-defun (&rest args)
+  "This function run buffer-local function"
+  (interactive)
+  (if (called-interactively-p 'any)   ;To call interactively AND to
+                                      ;be able to have elisp-calls
+    (call-interactively auto-goto-defun-function)
+    (apply auto-goto-defun-function args)))
 
 ;; function decides whether .h file is C or C++ header, sets C++ by
 ;; default because there's more chance of there being a .h without a
@@ -309,15 +343,15 @@ header"
 
 (defun go-hook ()
   (compiled-lang-hook)
-  (local-set-key (kbd "M-M") 'godef-jump)
-  (setq gofmt-command "goimports")
+  (setq-local auto-goto-defun-function (symbol-function 'godef-jump))
+  ;(setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save))
 
 (defun js-hook ()
   (RET-newline-and-indent)
   (setq-local indent-tabs-mode nil)
   (tern-mode 1)
-  (local-set-key (kbd "M-M") 'tern-find-definition))
+  (setq-local auto-goto-defun-function (symbol-function 'tern-find-definition)))
 
 
 ;(defun kill-buf-emacsclient ()
@@ -345,18 +379,16 @@ header"
               (setq-local imenu-create-index-function
                           #'ggtags-build-imenu-index))))
 
-(define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
-(define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
-(define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
-(define-key ggtags-mode-map (kbd "C-c g f") 'ggtags-find-file)
-(define-key ggtags-mode-map (kbd "C-c g c") 'ggtags-create-tags)
-(define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
+(define-key ggtags-mode-map (kbd "C-c t s") 'ggtags-find-other-symbol)
+(define-key ggtags-mode-map (kbd "C-c t h") 'ggtags-view-tag-history)
+(define-key ggtags-mode-map (kbd "C-c t r") 'ggtags-find-reference)
+(define-key ggtags-mode-map (kbd "C-c t f") 'ggtags-find-file)
+(define-key ggtags-mode-map (kbd "C-c t c") 'ggtags-create-tags)
+(define-key ggtags-mode-map (kbd "C-c t u") 'ggtags-update-tags)
 
 (define-key ggtags-mode-map (kbd "S-RET") 'ggtags-find-tag-dwim)
 (define-key ggtags-mode-map (kbd "M-M")   'ggtags-find-tag-dwim)
 (define-key ggtags-mode-map (kbd "C-G")   'pop-tag-mark)
-
-(define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
 ;;; --- --- --- --- --- --- --- --- end --- --- --- --- --- --- --- ---
 
 ;;; --- --- --- --- --- --- --- --- Sessions --- --- --- --- --- --- --- ---

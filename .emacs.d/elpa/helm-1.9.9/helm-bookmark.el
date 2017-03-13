@@ -219,10 +219,7 @@
 
 (defun helm-bookmark-jump-other-window (candidate)
   (let (non-essential)
-    (if (string= (assoc-default 'name (helm-get-current-source))
-                 "Bookmark helm-find-files sessions")
-        (bookmark-jump candidate)
-        (bookmark-jump-other-window candidate))))
+    (bookmark-jump-other-window candidate)))
 
 
 ;;; bookmark-set
@@ -476,11 +473,26 @@ than `w3m-browse-url' use it."
 (defvar helm-bookmark-find-files-map
   (let ((map (make-sparse-keymap)))
     (set-keymap-parent map helm-bookmark-map)
+    (define-key map (kbd "C-c o")   'ignore)
     (define-key map (kbd "C-x C-d") 'helm-bookmark-run-browse-project)
     map))
 
+(defclass helm-bookmark-overwrite-inheritor (helm-source) ())
+
+(defmethod helm--setup-source ((source helm-bookmark-overwrite-inheritor))
+  (setf (slot-value source 'action)
+        (helm-append-at-nth
+         (remove '("Jump to BM other window" . helm-bookmark-jump-other-window)
+                 helm-type-bookmark-actions)
+         '(("Browse project" . helm-bookmark-browse-project)) 1))
+  (setf (slot-value source 'keymap) helm-bookmark-find-files-map))
+
+(defclass helm-bookmark-find-files-class (helm-source-filtered-bookmarks
+                                          helm-bookmark-overwrite-inheritor)
+  ())
+
 (defvar helm-source-bookmark-helm-find-files
-  (helm-make-source "Bookmark helm-find-files sessions" 'helm-source-filtered-bookmarks
+  (helm-make-source "Bookmark helm-find-files sessions" 'helm-bookmark-find-files-class
       :init (lambda ()
               (bookmark-maybe-load-default-file)
               (helm-init-candidates-in-buffer
