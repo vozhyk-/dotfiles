@@ -1,3 +1,5 @@
+source ~/.zshrc-global
+
 if [[ "$INSIDE_EMACS" != "" ]]
 then
     export EDITOR=/usr/bin/emacsclient
