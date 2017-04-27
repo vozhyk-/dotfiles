@@ -198,9 +198,12 @@ mode "exec" {
 	bindsym Shift+x exec --no-startup-id $term -e xkill; mode "default"
         bindsym z exec $term -e 'sudo su'; mode "default"
         bindsym b exec $term -e 'bc -l'; mode "default"
+
         bindsym Shift+e exec $shell -c emacs; mode "default"
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
+        bindsym s exec studio; mode "default"
+
         bindsym d exec $file_manager; mode "default"
         bindsym f exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
@@ -212,9 +215,9 @@ mode "exec" {
 	#bindsym p exec pavucontrol; mode "default"
 	bindsym p exec kcmshell5 kcm_pulseaudio; mode "default"
 	bindsym Shift+p exec pidgin; mode "default"
-	bindsym s exec skype; mode "default"
+	#bindsym s exec skype; mode "default"
 	bindsym t exec thunderbird; mode "default"
-	bindsym Shift+s exec smplayer; mode "default"
+	#bindsym Shift+s exec smplayer; mode "default"
 	# MOC:
 	#bindsym m exec $term -e ~/bin/mocp; mode "default"
 	# Clementine:
