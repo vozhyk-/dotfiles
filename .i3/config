@@ -48,5 +48,4 @@ bar {
         tray_output primary
 }
 
-exec --no-startup-id ~/.xinitrc
 exec --no-startup-id dunst
