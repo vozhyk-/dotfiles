@@ -236,7 +236,6 @@ mode "exec" {
         bindsym r exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P 'rename workspace: '; mode "default"
 
         bindsym g mode "exec-game"
-        bindsym w mode "wallpaper"
 
         bindsym $mod+a    mode "default"
         bindsym Control+g mode "default"
