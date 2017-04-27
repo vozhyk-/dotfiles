@@ -97,7 +97,6 @@ bindsym $mod+period layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+m floating toggle
-bindsym Control+Mod1+m floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+m focus mode_toggle
