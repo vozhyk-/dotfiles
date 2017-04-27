@@ -9,48 +9,8 @@ set $shell zsh
 set $file_manager dolphin
 set $arch schroot
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 9
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# kill focused window
-bindsym $mod+Shift+colon kill
-bindsym Control+Mod1+q kill
-
-bindsym $mod+z exec --no-startup-id zsh -i -c kill -STOP `xpid`
-
-bindsym $mod+Shift+e exec --no-startup-id dmenu_run
-
-# change focus
-bindsym $mod+c focus up
-bindsym $mod+h focus left
-bindsym $mod+t focus down
-bindsym $mod+n focus right
-
-# move focused window
-bindsym $mod+Shift+c move up
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+n move right
-
-# split in horizontal orientation
-bindsym $mod+d split h
-
-# split in vertical orientation
-bindsym $mod+k split v
-
-# switch to workspace
 bindsym $mod+ampersand workspace number 1
 bindsym $mod+bracketleft workspace number 2
 bindsym $mod+braceleft workspace number 3: code
@@ -63,12 +23,6 @@ bindsym $mod+plus workspace number 9: flame
 bindsym $mod+bracketright workspace number 10: music
 bindsym $mod+exclam workspace number 11: []
 
-bindsym $mod+g workspace prev
-bindsym $mod+r workspace next
-
-bindsym $mod+space workspace back_and_forth
-
-# move focused container to workspace and switch to it
 bindsym $mod+Shift+ampersand move container to workspace number 1; workspace number 1
 bindsym $mod+Shift+7 move container to workspace number 2; workspace number 2
 bindsym $mod+Shift+braceleft move container to workspace number 3: code; workspace number 3: code
@@ -81,29 +35,14 @@ bindsym $mod+Shift+4 move container to workspace number 9: flame; workspace numb
 bindsym $mod+Shift+bracketright move container to workspace number 10: music; workspace number 10: music
 bindsym $mod+Shift+exclam move container to workspace number 11: []; workspace number 11: []
 
-bindsym $mod+Shift+g move container to workspace prev; workspace prev
-bindsym $mod+Shift+r move container to workspace next; workspace next
-
-# reload the configuration file
-bindsym $mod+Shift+j reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
-
-mode "exec" {
-        bindsym x exec $term; mode "default"
-}
-
-bindsym $mod+a mode "exec"
 
 hide_edge_borders both
 
 for_window [class="Plasma-desktop"] border none
 for_window [class="krunner"] border none
-for_window [class="Pavucontrol"] floating enable;
 for_window [class="Plasmoidviewer"] floating enable;
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
         status_command i3status
         tray_output primary
@@ -111,5 +50,4 @@ bar {
 
 exec --no-startup-id ~/.xinitrc
 exec --no-startup-id compton
-exec --no-startup-id set-wallpaper ~/images/a4127161963_10.jpg
 exec --no-startup-id dunst
