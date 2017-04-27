@@ -228,6 +228,9 @@ mode "exec" {
 	bindsym m exec spotify; mode "default"
 	bindsym Shift+t exec ktorrent; mode "default"
 	bindsym k exec krusader; mode "default"
+	bindsym v exec VirtualBox; mode "default"
+	bindsym w exec kwalletmanager5; mode "default"
+	bindsym a exec kalarm; mode "default"
 	bindsym n exec $term -e 'zsh -i -c tnt'; mode "default"
 
         bindsym r exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P 'rename workspace: '; mode "default"
