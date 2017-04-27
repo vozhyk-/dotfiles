@@ -34,21 +34,13 @@ font pango:DejaVu Sans Mono 9
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+colon kill
-#bindsym $C+$M+q kill
 bindsym Control+Mod1+q kill
 
 bindsym $mod+z exec --no-startup-id zsh -i -c kill -STOP `xpid`
 
 bindsym $mod+Shift+e exec --no-startup-id dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+c focus up
@@ -114,9 +106,6 @@ bindsym $mod+b border none
 # focus the parent container
 bindsym $mod+semicolon focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # switch to workspace
 bindsym $mod+ampersand workspace number 1
 bindsym $mod+bracketleft workspace number 2
@@ -141,7 +130,6 @@ bindsym Control+Shift+XF86AudioNext workspace next
 
 bindsym $mod+s workspace back_and_forth
 bindsym $mod+space workspace back_and_forth
-bindsym XF86Launch1 workspace back_and_forth
 
 bindsym Mod1+F7 exec --no-startup-id sudo chvt 7
 bindsym Mod1+F8 exec --no-startup-id sudo chvt 8
@@ -165,9 +153,6 @@ bindsym $mod+Shift+r move container to workspace next; workspace next
 bindsym $mod+F8 move workspace to output left
 bindsym $mod+F9 move workspace to output right
 
-# lock screen
-#bindsym XF86Sleep exec gnome-screensaver-command -l
-
 # reload the configuration file
 bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -175,176 +160,19 @@ bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+greater exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym c resize shrink height 10 px or 5 ppt
-        bindsym h resize shrink width 10 px or 5 ppt
-        bindsym t resize grow height 10 px or 5 ppt
-        bindsym n resize grow width 10 px or 5 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 5 ppt
-        bindsym Down resize grow height 10 px or 5 ppt
-        bindsym Up resize shrink height 10 px or 5 ppt
-        bindsym Right resize grow width 10 px or 5 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Control+g mode "default"
-        bindsym $mod+g    mode "default"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym space mode "default"
-}
-
 mode "exec" {
         bindsym x exec $term; mode "default"
-	bindsym Shift+x exec --no-startup-id $term -e xkill; mode "default"
-        bindsym z exec $term -e 'sudo su'; mode "default"
-        bindsym b exec $term -e 'bc -l'; mode "default"
-
-        bindsym Shift+e exec $shell -c emacs; mode "default"
-        bindsym e exec --no-startup-id emacsclient -c; mode "default"
-        bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
-        bindsym s exec studio; mode "default"
-        bindsym Shift+n exec nsight; mode "default"
-
-        bindsym d exec $file_manager; mode "default"
-        bindsym Shift+f exec firefox --new-instance; mode "default"
-        bindsym f exec firefox; mode "default"
-        bindsym Return exec firefox; mode "default"
-        #bindsym Shift+c exec google-chrome-stable; mode "default"
-        bindsym Shift+c exec chromium; mode "default"
-        bindsym l exec links -g google.com; mode "default"
-        bindsym h exec hexchat; mode "default"
-        bindsym i exec $term -e 'zsh -i -c chat'; mode "default"
-	bindsym o exec okular; mode "default"
-	#bindsym p exec pavucontrol; mode "default"
-	bindsym p exec kcmshell5 kcm_pulseaudio; mode "default"
-	bindsym Shift+p exec pidgin; mode "default"
-	#bindsym s exec skype; mode "default"
-	bindsym t exec thunderbird; mode "default"
-	#bindsym Shift+s exec smplayer; mode "default"
-	# MOC:
-	#bindsym m exec $term -e ~/bin/mocp; mode "default"
-	# Clementine:
-	bindsym m exec clementine; mode "default"
-	# MPC:
-	#bindsym m exec $term -e ncmpcpp; mode "default"
-	# Spotify:
-	#bindsym m exec spotify; mode "default"
-	bindsym Shift+t exec ktorrent; mode "default"
-	bindsym k exec krusader; mode "default"
-	bindsym v exec VirtualBox; mode "default"
-	bindsym w exec kwalletmanager5; mode "default"
-	bindsym a exec kalarm; mode "default"
-	bindsym n exec $term -e 'zsh -i -c tnt'; mode "default"
-
-        bindsym r exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P 'rename workspace: '; mode "default"
-
-        bindsym g mode "exec-game"
-
-        bindsym $mod+a    mode "default"
-        bindsym Control+g mode "default"
-        bindsym $mod+g    mode "default"
-        bindsym Escape    mode "default"
 }
 
-mode "exec-game" {
-        #bindsym g exec --no-startup-id kioclient exec ~/.local/share/applications/G-Senjou\ no\ Maou.desktop; mode "default"
-        #bindsym d exec --no-startup-id kioclient exec ~/.local/share/applications/Deus\ Ex\ GOTY.desktop; mode "default"
-        bindsym k exec --no-startup-id kioclient exec ~/.local/share/applications/Tsukihime-2.desktop; mode "default"
-        bindsym Shift+k exec --no-startup-id kioclient exec ~/.local/share/applications/Kanon.desktop; mode "default"
-	bindsym r exec $term -e ~/files/Games/Remember11/R11-English.exe; mode "default"
-        bindsym m exec --no-startup-id kioclient exec ~/.local/share/applications/Might\ and\ Magic\ 6.desktop; mode "default"
-        bindsym t exec --no-startup-id kioclient exec ~/.local/share/applications/The\ Walking\ Dead\ season\ 1.desktop; mode "default"
-        bindsym w exec wesnoth; mode "default"
-        bindsym p exec --no-startup-id epsxe; mode "default"
-
-        bindsym Control+g mode "default"
-        bindsym $mod+g    mode "default"
-        bindsym Escape    mode "default"
-}
-
-mode "control" {
-        bindsym Control+Mod5+m workspace number 10: music; mode "default"
-        bindsym Control+Mod5+t workspace back_and_forth; mode "default"
-
-	# Switch mono/stereo
-	bindsym b exec --no-startup-id paswitch; mode "default"
-
-        # MOC:
-        #bindsym h     exec --no-startup-id mocp --previous; mode "default"
-        #bindsym n     exec --no-startup-id mocp --next; mode "default"
-        #bindsym space exec --no-startup-id mocp --toggle-pause; mode "default"
-	
-        # Clementine:
-        #bindsym h     exec --no-startup-id clementine --previous; mode "default"
-        #bindsym n     exec --no-startup-id clementine --next; mode "default"
-        #bindsym space exec --no-startup-id clementine --play-pause; mode "default"
-
-        # MPC:
-        bindsym h     exec --no-startup-id mpc prev; mode "default"
-        bindsym n     exec --no-startup-id mpc next; mode "default"
-        bindsym space exec --no-startup-id mpc toggle; mode "default"
-	
-        bindsym Escape         mode "default"
-        bindsym Control+Mod5+w mode "default"
-}
-
-mode "wallpaper" {
-        bindsym n exec --no-startup-id random-wallpaper; mode "default"
-        bindsym o exec gwenview "`last-wallpaper 1`"; mode "default"
-        #bindsym d exec i3-nagbar -t warning -m 'Do you really want to delete ``'"$(last-wallpaper 1)''?" -b "Yes" "rm $(last-wallpaper 1)"; mode "default"
-	bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 1`"; mode "default"
-
-        bindsym p mode "wallpaper-prev"
-        bindsym b mode "wallpaper-prev"
-
-        bindsym Control+g mode "default"
-        bindsym $mod+g    mode "default"
-        bindsym Escape    mode "default"
-}
-mode "wallpaper-prev" {
-        bindsym o exec gwenview "`last-wallpaper 2`"; mode "default"
-        bindsym p exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-        bindsym b exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-        bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-
-        bindsym Control+g mode "default"
-        bindsym $mod+g           mode "default"
-        bindsym Escape           mode "default"
-}
-
-bindsym $mod+p mode "resize"
 bindsym $mod+a mode "exec"
-bindsym Control+XF86AudioRaiseVolume mode "exec"
-bindsym Control+Mod5+m mode "control"
-bindsym $mod+w mode "wallpaper"
 
 new_float pixel 2
 hide_edge_borders both
 
 for_window [class="Plasma-desktop"] border none
 for_window [class="krunner"] border none
-for_window [class="Kmix"] floating enable;
 for_window [class="Pavucontrol"] floating enable;
 for_window [class="Plasmoidviewer"] floating enable;
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Conky"] floating enable; border none
-
-#for_window [instance="gstring.exe"] move position center
-
-for_window [class="re-neutrino-java_tanks-client-Main"] floating enable
-
-for_window [class="Thunderbird"] move container to workspace number 7
-for_window [class="Pidgin"] move container to workspace number 4: vm
-for_window [class="Clementine"] move container to workspace number 10: music
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -354,9 +182,6 @@ bar {
 }
 
 exec --no-startup-id ~/.xinitrc
-#exec --no-startup-id xcompmgr
 exec --no-startup-id compton
-#exec --no-startup-id random-wallpaper
 exec --no-startup-id set-wallpaper ~/images/a4127161963_10.jpg
 exec --no-startup-id dunst
-#exec --no-startup-id conky # --no-startup-id might not be necessary
