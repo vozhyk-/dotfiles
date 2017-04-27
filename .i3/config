@@ -223,7 +223,9 @@ mode "exec" {
 	# Clementine:
 	#bindsym m exec clementine; mode "default"
 	# MPC:
-	bindsym m exec $term -e ncmpcpp; mode "default"
+	#bindsym m exec $term -e ncmpcpp; mode "default"
+	# Spotify:
+	bindsym m exec spotify; mode "default"
 	bindsym Shift+t exec ktorrent; mode "default"
 	bindsym k exec krusader; mode "default"
         bindsym n exec $term -e 'zsh -i -c tnt'; mode "default"
