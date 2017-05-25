@@ -119,6 +119,7 @@
 	(ccl ("ccl" "-K" "utf-8"))
 	(ecl ("ecl"))))
 (setq slime-net-coding-system 'utf-8-unix)
+(setq slime-contribs '(slime-fancy))
 
 (defun smart-beginning-of-line ()
   "Move point to first non-whitespace character or beginning-of-line.
