@@ -33,6 +33,7 @@
 (load-theme 'solarized t)
 
 (global-subword-mode 1)
+(add-hook 'after-init-hook 'global-hungry-delete-mode)
 
 (setq mouse-yank-at-point t) ; taken from kevwargo/emacs-config
 
