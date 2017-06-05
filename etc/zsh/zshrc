@@ -313,11 +313,20 @@ do_every() {
     done
 }
 
+alias cpva='cp -va'
 backup() {
-    cp -va "$1" "$1".b
+    cpva "$1" "$1".b
 }
+unbackup() {
+    cpva "$1".b "$1"
+}
+
+alias mvv='mv -v'
 mbackup() {
-    mv -v "$1" "$1".b
+    mvv "$1" "$1".b
+}
+unmbackup() {
+    mvv "$1".b "$1"
 }
 
 alias sc='grep "^[[:space:]]*[^#]"'
