@@ -146,7 +146,7 @@ Position the cursor at it's beginning, according to the current mode."
 (defvar auto-goto-defun-function
   (lambda ()
     (interactive)
-    (message "Default message"))
+    (message "No auto-goto-defun-function defined for buffer"))
   "Set this to the appropriate goto-defun function for the buffer's major mode")
 (make-variable-buffer-local 'auto-goto-defun-function)
 
