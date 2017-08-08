@@ -189,7 +189,7 @@ header"
   (local-set-key (kbd "RET") 'newline-and-indent))
 
 (dolist (h (mapcar (lambda (x) (intern (concat (symbol-name x) "-mode-hook")))
-		   '(haskell python ruby scala shell-script html nxml)))
+		   '(haskell ruby scala shell-script html nxml)))
   (add-hook h 'RET-newline-and-indent))
 
 (add-hook 'lisp-mode-hook 'lisp-hook)
@@ -200,6 +200,7 @@ header"
 (add-hook 'c++-mode-hook 'C++-hook)
 (add-hook 'go-mode-hook 'go-hook)
 (add-hook 'js-mode-hook 'js-hook)
+(add-hook 'python-mode-hook 'python-hook)
 
 (add-hook 'before-save-hook 'gfmt-before-save)
 
@@ -356,6 +357,10 @@ header"
   (tern-mode 1)
   (setq-local auto-goto-defun-function (symbol-function 'tern-find-definition)))
 
+(defun python-hook ()
+  (RET-newline-and-indent)
+  (anaconda-mode 1)
+  (setq-local auto-goto-defun-function (symbol-function 'anaconda-mode-find-definitions)))
 
 ;(defun kill-buf-emacsclient ()
 ;  (local-set-key "\C-w" 'server-edit))
