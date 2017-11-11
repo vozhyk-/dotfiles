@@ -69,6 +69,12 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# ...or Control + media keys
+bindsym Control+XF86AudioPrev focus left
+bindsym Control+XF86AudioStop focus down
+bindsym Control+XF86AudioPlay focus up
+bindsym Control+XF86AudioNext focus right
+
 # move focused window
 bindsym $mod+Shift+c move up
 bindsym $mod+Shift+h move left
@@ -129,6 +135,9 @@ bindsym $mod+r workspace next
 
 bindsym Control+XF86Back workspace prev
 bindsym Control+XF86Forward workspace next
+
+bindsym Control+Shift+XF86AudioPrev workspace prev
+bindsym Control+Shift+XF86AudioNext workspace next
 
 bindsym $mod+s workspace back_and_forth
 bindsym $mod+space workspace back_and_forth
@@ -206,6 +215,7 @@ mode "exec" {
 
         bindsym d exec $file_manager; mode "default"
         bindsym f exec firefox; mode "default"
+        bindsym Return exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
         bindsym Shift+c exec $arch chromium; mode "default"
         bindsym l exec links -g google.com; mode "default"
@@ -310,6 +320,7 @@ mode "wallpaper-prev" {
 
 bindsym $mod+p mode "resize"
 bindsym $mod+a mode "exec"
+bindsym Control+XF86AudioRaiseVolume mode "exec"
 bindsym Control+Mod5+m mode "control"
 bindsym $mod+w mode "wallpaper"
 
