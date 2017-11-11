@@ -40,3 +40,6 @@ flycheck_*.el
 
 # tern ports
 .tern-port
+
+# Python virtualenv's
+.venv
