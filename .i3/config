@@ -231,11 +231,11 @@ mode "exec" {
 	# MOC:
 	#bindsym m exec $term -e ~/bin/mocp; mode "default"
 	# Clementine:
-	#bindsym m exec clementine; mode "default"
+	bindsym m exec clementine; mode "default"
 	# MPC:
 	#bindsym m exec $term -e ncmpcpp; mode "default"
 	# Spotify:
-	bindsym m exec spotify; mode "default"
+	#bindsym m exec spotify; mode "default"
 	bindsym Shift+t exec ktorrent; mode "default"
 	bindsym k exec krusader; mode "default"
 	bindsym v exec VirtualBox; mode "default"
