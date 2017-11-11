@@ -299,6 +299,7 @@ mode "wallpaper" {
         bindsym n exec --no-startup-id random-wallpaper; mode "default"
         bindsym o exec gwenview "`last-wallpaper 1`"; mode "default"
         #bindsym d exec i3-nagbar -t warning -m 'Do you really want to delete ``'"$(last-wallpaper 1)''?" -b "Yes" "rm $(last-wallpaper 1)"; mode "default"
+	bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 1`"; mode "default"
 
         bindsym p mode "wallpaper-prev"
         bindsym b mode "wallpaper-prev"
