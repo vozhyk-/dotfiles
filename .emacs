@@ -503,6 +503,7 @@ header"
      ("M-," . term-send-input)
      ("M-." . comint-dynamic-complete))))
  '(tool-bar-mode nil)
+ '(tramp-default-method "ssh")
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
