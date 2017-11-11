@@ -516,3 +516,6 @@ header"
  '(slime-dfl-faces-local-function ((t (:foreground "blue"))) t))
 (put 'narrow-to-region 'disabled nil)
 (put 'scroll-left 'disabled nil)
+
+
+;; ivy; diminish; swiper; counsel; ibuffer; sublimity; smex; ace-window
