@@ -455,6 +455,8 @@ header"
    (quote
     (turn-on-haskell-indentation RET-newline-and-indent)) t)
  '(helm-ff-history-max-length 1000)
+ '(magit-diff-arguments (quote ("--no-ext-diff" "--stat" "-M")))
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(magit-push-arguments (quote ("--force-with-lease")))
  '(magit-rebase-arguments (quote ("--autosquash" "--autostash")))
  '(plantuml-jar-path "/home/vozhyk/src/plantuml.jar")
