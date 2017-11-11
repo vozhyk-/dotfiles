@@ -219,7 +219,7 @@ mode "exec" {
         bindsym f exec firefox; mode "default"
         bindsym Return exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
-        bindsym Shift+c exec $arch chromium; mode "default"
+        bindsym Shift+c exec chromium; mode "default"
         bindsym l exec links -g google.com; mode "default"
         bindsym h exec hexchat; mode "default"
         bindsym i exec $term -e 'zsh -i -c chat'; mode "default"
