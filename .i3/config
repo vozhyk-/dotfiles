@@ -121,12 +121,12 @@ bindsym $mod+semicolon focus parent
 bindsym $mod+ampersand workspace number 1
 bindsym $mod+bracketleft workspace number 2
 bindsym $mod+braceleft workspace number 3: code
-bindsym $mod+braceright workspace number 4: doc
+bindsym $mod+braceright workspace number 4: vm
 bindsym $mod+parenleft workspace number 5: im
-bindsym $mod+equal workspace number 6: se2
-bindsym $mod+asterisk workspace number 7: cg
+bindsym $mod+equal workspace number 6: gpca
+bindsym $mod+asterisk workspace number 7
 bindsym $mod+parenright workspace number 8: work
-bindsym $mod+plus workspace number 9: aif
+bindsym $mod+plus workspace number 9: flame
 bindsym $mod+bracketright workspace number 10: music
 bindsym $mod+exclam workspace number 11: []
 
@@ -150,12 +150,12 @@ bindsym Mod1+F8 exec --no-startup-id sudo chvt 8
 bindsym $mod+Shift+ampersand move container to workspace number 1; workspace number 1
 bindsym $mod+Shift+7 move container to workspace number 2; workspace number 2
 bindsym $mod+Shift+braceleft move container to workspace number 3: code; workspace number 3: code
-bindsym $mod+Shift+braceright move container to workspace number 4: doc; workspace number 4: doc
+bindsym $mod+Shift+braceright move container to workspace number 4: vm; workspace number 4: vm
 bindsym $mod+Shift+1 move container to workspace number 5: im; workspace number 5: im
-bindsym $mod+Shift+9 move container to workspace number 6: se2; workspace number 6: se2
-bindsym $mod+Shift+0 move container to workspace number 7: cg; workspace number 7: cg
+bindsym $mod+Shift+9 move container to workspace number 6: gpca; workspace number 6: gpca
+bindsym $mod+Shift+0 move container to workspace number 7; workspace number 7
 bindsym $mod+Shift+2 move container to workspace number 8: work; workspace number 8: work
-bindsym $mod+Shift+4 move container to workspace number 9: aif; workspace number 9: aif
+bindsym $mod+Shift+4 move container to workspace number 9: flame; workspace number 9: flame
 bindsym $mod+Shift+bracketright move container to workspace number 10: music; workspace number 10: music
 bindsym $mod+Shift+exclam move container to workspace number 11: []; workspace number 11: []
 
@@ -339,8 +339,8 @@ for_window [class="Conky"] floating enable; border none
 
 for_window [class="re-neutrino-java_tanks-client-Main"] floating enable
 
-for_window [class="Thunderbird"] move container to workspace number 7: cg
-for_window [class="Pidgin"] move container to workspace number 4: doc
+for_window [class="Thunderbird"] move container to workspace number 7
+for_window [class="Pidgin"] move container to workspace number 4: vm
 for_window [class="Clementine"] move container to workspace number 10: music
 
 # Start i3bar to display a workspace bar (plus the system information i3status
