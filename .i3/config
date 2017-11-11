@@ -212,8 +212,10 @@ mode "exec" {
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
         bindsym s exec studio; mode "default"
+        bindsym Shift+n exec nsight; mode "default"
 
         bindsym d exec $file_manager; mode "default"
+        bindsym Shift+f exec firefox --new-instance; mode "default"
         bindsym f exec firefox; mode "default"
         bindsym Return exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
