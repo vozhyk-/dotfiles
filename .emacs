@@ -388,6 +388,8 @@ header"
           (lambda ()
             (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
               (ggtags-mode 1)
+              (setq-local auto-goto-defun-function
+                          (symbol-function 'ggtags-find-tag-dwim))
               (setq-local imenu-create-index-function
                           #'ggtags-build-imenu-index))))
 
