@@ -83,6 +83,7 @@
 ; TODO bind it only for files under Git
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c b") 'magit-blame)
+(global-set-key (kbd "C-c l") 'git-link)
 
 (define-key key-translation-map (kbd "M-c") (kbd "<up>"))
 (define-key key-translation-map (kbd "M-t") (kbd "<down>"))
