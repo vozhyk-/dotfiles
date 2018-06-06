@@ -95,6 +95,9 @@
 (define-key key-translation-map (kbd "M-m") (kbd "RET"))
 
 
+(load-file "~/.emacs.d/elisp/robot-mode.el")
+(add-to-list 'auto-mode-alist '("\\.robot\\'" . robot-mode))
+
 ;(load "~/.emacs.d/multi-term.el")
 (require 'multi-term)
 (setq multi-term-program "/bin/zsh")
