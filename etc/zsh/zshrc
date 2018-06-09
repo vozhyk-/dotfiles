@@ -256,7 +256,7 @@ export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support
 
 export PYTHONPATH=/mnt/dev/devj/python/modules
 
-#source /mnt/dev/bash/devsmth
+source /mnt/dev/bash/devsmth
 source /mnt/src/sh-utils/bashrc/goback
 export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin"
 
