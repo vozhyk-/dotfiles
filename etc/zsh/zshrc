@@ -260,14 +260,13 @@ export PYTHONPATH=/mnt/dev/devj/python/modules
 source /mnt/src/sh-utils/bashrc/goback
 export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin"
 
-rcsv(){
+sv(){
     act="$1"; shift
     for i in $@
     do
         /etc/init.d/"$i" "$act"
     done
 }
-alias sv='systemctl'
 alias esv='sv start'
 alias dsv='sv stop'
 alias rsv='sv restart'
