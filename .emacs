@@ -40,6 +40,9 @@
 
 (setq mouse-yank-at-point t) ; taken from kevwargo/emacs-config
 
+(require 'magit-gerrit)
+(setq-default magit-gerrit-remote "gerrit")
+
 (savehist-mode 1)
 
 (setq save-place-file "~/.emacs.d/saveplace")
