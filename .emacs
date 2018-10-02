@@ -71,7 +71,7 @@
 (global-set-key (kbd "<f9>") 'F9-map)
 
 (define-key F9-map (kbd "d") 'cd)
-(define-key F9-map (kbd "SPC") 'get-term)
+(define-key F9-map (kbd "SPC") 'powershell)
 (define-key F9-map (kbd "*") 'save-buffer)
 (define-key F9-map (kbd ")") 'save-buffer)
 (define-key F9-map (kbd "<f9>") 'save-buffer)
