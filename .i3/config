@@ -212,7 +212,7 @@ mode "exec" {
         bindsym Shift+e exec $shell -c emacs; mode "default"
         bindsym e exec --no-startup-id emacsclient -c; mode "default"
         bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
-        bindsym s exec studio; mode "default"
+        bindsym s exec systemsettings5; mode "default"
         bindsym Shift+n exec nsight; mode "default"
 
         bindsym d exec $file_manager; mode "default"
