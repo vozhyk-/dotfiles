@@ -1,0 +1,9 @@
+[user]
+	name = Witaut Bajaryn
+	email = vitaut.bayaryn@gmail.com
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore_global
+[commit]
+	cleanup = scissors
