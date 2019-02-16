@@ -14,6 +14,11 @@ set $mod Mod4
 #set $M Mod1
 #set $S Shift
 
+set $up c
+set $down t
+set $left h
+set $right n
+
 set $term konsole
 set $shell zsh
 set $file_manager dolphin
@@ -52,10 +57,10 @@ bindsym $mod+Shift+e exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+c focus up
-bindsym $mod+h focus left
-bindsym $mod+t focus down
-bindsym $mod+n focus right
+bindsym $mod+$up focus up
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$right focus right
 
 bindsym Shift+XF86Back focus left
 bindsym Shift+XF86Forward focus right
@@ -77,10 +82,10 @@ bindsym Control+XF86AudioPlay focus up
 bindsym Control+XF86AudioNext focus right
 
 # move focused window
-bindsym $mod+Shift+c move up
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+t move down
-bindsym $mod+Shift+n move right
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
