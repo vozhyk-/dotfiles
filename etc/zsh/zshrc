@@ -295,11 +295,7 @@ dh(){
     popd &>/dev/null
 }
 
-alias nsum="ruby -e 'y = 0
-while (s = gets); s.chomp!
-  y = y + s.to_i
-end
-print y'"
+alias nsum="ruby -e 'print STDIN.map(&:to_i).sum'"
 
 do_every() {
     sec="$1"
