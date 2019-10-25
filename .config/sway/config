@@ -11,6 +11,14 @@ set $shell zsh
 set $file_manager dolphin
 
 output eDP-1 scale 2
+
+input type:keyboard {
+	xkb_layout us,us,by,pl,ru,by,us,pl
+	xkb_variant dvp,,,dvp,,latin,dvorak-l,
+	# TODO Keep Win as is on the Thinkpad keyboard
+	xkb_options caps:hyper,shift:both_capslock,altwin:ctrl_win
+}
+
 input 2:7:SynPS/2_Synaptics_TouchPad {
 	natural_scroll enabled
 	tap enabled
