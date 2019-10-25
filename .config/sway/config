@@ -1,0 +1,384 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $up c
+set $down t
+set $left h
+set $right n
+
+set $term konsole
+set $shell zsh
+set $file_manager dolphin
+# Your preferred application launcher
+# Note: it's recommended that you pass the final command to sway
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /home/vozhyk/images/90783642f0b093b3b39830411cf219da.jpg tile
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output HDMI-1 270
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' \
+#               resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+colon kill
+    bindsym Control+Mod1+q kill
+
+    # Start your launcher
+    bindsym $mod+Shift+e exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+j reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+greater exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    bindsym Shift+XF86Back focus left
+    bindsym Shift+XF86Forward focus right
+    bindsym Mod5+Down focus down
+    bindsym Mod5+Up focus up
+    bindsym Control+Mod5+Down focus down
+    bindsym Control+Mod5+Up focus up
+
+    # Or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    # Ditto, with arrow keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+ampersand workspace number 1
+    bindsym $mod+bracketleft workspace number 2
+    bindsym $mod+braceleft workspace number 3: code
+    bindsym $mod+braceright workspace number 4: code2
+    bindsym $mod+parenleft workspace number 5: review
+    bindsym $mod+equal workspace number 6
+    bindsym $mod+asterisk workspace number 7
+    bindsym $mod+parenright workspace number 8: test run
+    bindsym $mod+plus workspace number 9: flame
+    bindsym $mod+bracketright workspace number 10: music
+    bindsym $mod+exclam workspace number 11: []
+
+    bindsym $mod+g workspace prev
+    bindsym $mod+r workspace next
+
+    bindsym Control+XF86Back workspace prev
+    bindsym Control+XF86Forward workspace next
+
+    bindsym $mod+s workspace back_and_forth
+    bindsym $mod+space workspace back_and_forth
+    bindsym XF86Launch1 workspace back_and_forth
+
+    bindsym Mod1+F7 exec --no-startup-id sudo chvt 7
+    bindsym Mod1+F8 exec --no-startup-id sudo chvt 8
+
+    # Move focused container to workspace
+    bindsym $mod+Shift+ampersand move container to workspace number 1; workspace number 1
+    bindsym $mod+Shift+7 move container to workspace number 2; workspace number 2
+    bindsym $mod+Shift+braceleft move container to workspace number 3: code; workspace number 3: code
+    bindsym $mod+Shift+braceright move container to workspace number 4: code2; workspace number 4: code2
+    bindsym $mod+Shift+1 move container to workspace number 5: review; workspace number 5: review
+    bindsym $mod+Shift+9 move container to workspace number 6; workspace number 6
+    bindsym $mod+Shift+0 move container to workspace number 7; workspace number 7
+    bindsym $mod+Shift+2 move container to workspace number 8: test run; workspace number 8: test run
+    bindsym $mod+Shift+4 move container to workspace number 9: flame; workspace number 9: flame
+    bindsym $mod+Shift+bracketright move container to workspace number 10: music; workspace number 10: music
+    bindsym $mod+Shift+exclam move container to workspace number 11: []; workspace number 11: []
+
+    bindsym $mod+Shift+g move container to workspace prev; workspace prev
+    bindsym $mod+Shift+r move container to workspace next; workspace next
+
+    bindsym $mod+F8 move workspace to output left
+    bindsym $mod+F9 move workspace to output right
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+d splith
+    bindsym $mod+k splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+o layout stacking
+    bindsym $mod+comma layout tabbed
+    bindsym $mod+period layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+u fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+m floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+m focus mode_toggle
+
+    bindsym $mod+v move position center
+    bindsym $mod+b border none
+
+    # Move focus to the parent container
+    bindsym $mod+semicolon focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Control+g mode "default"
+    bindsym $mod+g    mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym space mode "default"
+}
+bindsym $mod+p mode "resize"
+
+mode "exec" {
+        bindsym x exec $term; mode "default"
+	bindsym Shift+x exec --no-startup-id $term -e xkill; mode "default"
+        bindsym z exec $term -e 'sudo su'; mode "default"
+        bindsym b exec $term -e 'bc -l'; mode "default"
+
+        bindsym Shift+e exec $shell -c emacs; mode "default"
+        bindsym e exec --no-startup-id emacsclient -c; mode "default"
+        bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
+	bindsym Shift+g exec $shell -c goland; mode "default"
+        bindsym s exec studio; mode "default"
+        bindsym Shift+n exec nsight; mode "default"
+
+        bindsym d exec $file_manager; mode "default"
+        bindsym Shift+f exec firefox --new-instance; mode "default"
+        bindsym f exec firefox; mode "default"
+        bindsym Return exec firefox; mode "default"
+        #bindsym Shift+c exec google-chrome-stable; mode "default"
+        bindsym Shift+c exec chromium; mode "default"
+        bindsym l exec links -g google.com; mode "default"
+        bindsym h exec hexchat; mode "default"
+        bindsym i exec $term -e 'zsh -i -c chat'; mode "default"
+	bindsym o exec okular; mode "default"
+	#bindsym p exec pavucontrol; mode "default"
+	bindsym p exec kcmshell5 kcm_pulseaudio; mode "default"
+	#bindsym Shift+p exec pidgin; mode "default"
+	bindsym Shift+p exec passmenu_codilime; mode "default"
+	#bindsym s exec skype; mode "default"
+	bindsym t exec thunderbird; mode "default"
+	#bindsym Shift+s exec smplayer; mode "default"
+	# MOC:
+	#bindsym m exec $term -e ~/bin/mocp; mode "default"
+	# Clementine:
+	bindsym m exec clementine; mode "default"
+	# MPC:
+	#bindsym m exec $term -e ncmpcpp; mode "default"
+	# Spotify:
+	#bindsym m exec spotify; mode "default"
+	bindsym Shift+t exec ktorrent; mode "default"
+	bindsym k exec krusader; mode "default"
+	bindsym v exec VirtualBox; mode "default"
+	bindsym w exec kwalletmanager5; mode "default"
+	bindsym a exec kalarm; mode "default"
+	bindsym n exec $term -e 'zsh -i -c tnt'; mode "default"
+
+        bindsym r exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P 'rename workspace: '; mode "default"
+
+        bindsym g mode "exec-game"
+
+        bindsym $mod+a    mode "default"
+        bindsym Control+g mode "default"
+        bindsym $mod+g    mode "default"
+        bindsym Escape    mode "default"
+}
+
+mode "exec-game" {
+        #bindsym g exec --no-startup-id kioclient exec ~/.local/share/applications/G-Senjou\ no\ Maou.desktop; mode "default"
+        #bindsym d exec --no-startup-id kioclient exec ~/.local/share/applications/Deus\ Ex\ GOTY.desktop; mode "default"
+        bindsym k exec --no-startup-id kioclient exec ~/.local/share/applications/Tsukihime-2.desktop; mode "default"
+        bindsym Shift+k exec --no-startup-id kioclient exec ~/.local/share/applications/Kanon.desktop; mode "default"
+	bindsym r exec $term -e ~/files/Games/Remember11/R11-English.exe; mode "default"
+        bindsym m exec --no-startup-id kioclient exec ~/.local/share/applications/Might\ and\ Magic\ 6.desktop; mode "default"
+        bindsym t exec --no-startup-id kioclient exec ~/.local/share/applications/The\ Walking\ Dead\ season\ 1.desktop; mode "default"
+        bindsym w exec wesnoth; mode "default"
+        bindsym p exec --no-startup-id epsxe; mode "default"
+
+        bindsym Control+g mode "default"
+        bindsym $mod+g    mode "default"
+        bindsym Escape    mode "default"
+}
+
+mode "control" {
+        bindsym Control+Mod5+m workspace number 10: music; mode "default"
+        bindsym Control+Mod5+t workspace back_and_forth; mode "default"
+
+	# Switch mono/stereo
+	bindsym b exec --no-startup-id paswitch; mode "default"
+
+        # MOC:
+        #bindsym h     exec --no-startup-id mocp --previous; mode "default"
+        #bindsym n     exec --no-startup-id mocp --next; mode "default"
+        #bindsym space exec --no-startup-id mocp --toggle-pause; mode "default"
+	
+        # Clementine:
+        #bindsym h     exec --no-startup-id clementine --previous; mode "default"
+        #bindsym n     exec --no-startup-id clementine --next; mode "default"
+        #bindsym space exec --no-startup-id clementine --play-pause; mode "default"
+
+        # MPC:
+        bindsym h     exec --no-startup-id mpc prev; mode "default"
+        bindsym n     exec --no-startup-id mpc next; mode "default"
+        bindsym space exec --no-startup-id mpc toggle; mode "default"
+	
+        bindsym Escape         mode "default"
+        bindsym Control+Mod5+w mode "default"
+}
+
+mode "wallpaper" {
+        bindsym n exec --no-startup-id random-wallpaper; mode "default"
+        bindsym o exec gwenview "`last-wallpaper 1`"; mode "default"
+        #bindsym d exec i3-nagbar -t warning -m 'Do you really want to delete ``'"$(last-wallpaper 1)''?" -b "Yes" "rm $(last-wallpaper 1)"; mode "default"
+	bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 1`"; mode "default"
+
+        bindsym p mode "wallpaper-prev"
+        bindsym b mode "wallpaper-prev"
+
+        bindsym Control+g mode "default"
+        bindsym $mod+g    mode "default"
+        bindsym Escape    mode "default"
+}
+mode "wallpaper-prev" {
+        bindsym o exec gwenview "`last-wallpaper 2`"; mode "default"
+        bindsym p exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
+        bindsym b exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
+        bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
+
+        bindsym Control+g mode "default"
+        bindsym $mod+g           mode "default"
+        bindsym Escape           mode "default"
+}
+
+bindsym $mod+a mode "exec"
+bindsym Control+XF86AudioRaiseVolume mode "exec"
+bindsym Control+Mod5+m mode "control"
+bindsym $mod+w mode "wallpaper"
+
+for_window [class="Thunderbird"] move container to workspace number 7
+for_window [class="Clementine"] move container to workspace number 10: music
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position bottom
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%F %T'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+include /etc/sway/config.d/*
