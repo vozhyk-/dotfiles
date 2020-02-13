@@ -238,7 +238,10 @@ function zle-line-finish () {
 zle -N zle-line-init
 zle -N zle-line-finish
 
-alias ls='ls --color=auto'
+# Use GNU dircolors; there is no other dircolors on MacOS anyway.
+alias dircolors='gdircolors'
+
+alias ls='gls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
