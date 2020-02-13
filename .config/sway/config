@@ -71,6 +71,11 @@ output DP-1 position 2446 210
 
 input type:keyboard xkb_file /home/vozhyk/.Xkeymap
 
+input 1118:36:Microsoft_Microsoft_Trackball_Explorer® {
+    scroll_method on_button_down
+    scroll_button button8
+}
+
 ### Key bindings
 #
 # Basics:
