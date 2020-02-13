@@ -4,4 +4,11 @@ then
     alias n='$EDITOR'
 fi
 
-PS1='%D{%F %T} %B%F{red}%m%k %B%F{blue}%~ %# %b%f%k'
+basic_ps1='%D{%F %T} %B%F{red}%m%k %B%F{blue}%~ %# %b%f%k'
+if [ -n "$BE_NAME" ]
+then
+    PS1="($BE_NAME) $basic_ps1"
+else
+    PS1="$basic_ps1"
+fi
+export PS1

@@ -24,6 +24,7 @@ map gc gT
 map g@ g^
 map gr g^
 map gl g$
+map <C-TAB> <C-v><C-TAB>
 map -ex g) tabmove $
 map -ex <C-b> set guioptions+=T
 map -ex <C-S-b> set go-=T

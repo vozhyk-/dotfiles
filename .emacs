@@ -97,7 +97,7 @@
 (define-key key-translation-map (kbd "M-m") (kbd "RET"))
 
 
-(add-to-list 'auto-mode-alist '("\\.tmpl\\'" . go-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\.tmpl\\'" . go-mode))
 
 ;(load "~/.emacs.d/multi-term.el")
 (require 'multi-term)

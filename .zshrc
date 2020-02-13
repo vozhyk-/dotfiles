@@ -6,13 +6,7 @@ fi
 
 #ECLIPSE_XMX=768m
 
-sv(){
-    act="$1"; shift
-    for i in $@
-    do
-        sudo /etc/init.d/"$i" "$act"
-    done
-}
+alias sv='sudo systemctl'
 
 alias blkid='sudo /sbin/blkid'
 alias ssu='sudo su'

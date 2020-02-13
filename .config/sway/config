@@ -32,13 +32,14 @@ output * bg /home/vozhyk/images/90783642f0b093b3b39830411cf219da.jpg tile
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 {
-    position 0 250
+    scale 1.40556
+    position 0 420
 }
 output HDMI-A-1 {
     transform 270
-    position 1920 0
+    position 1366 0
 }
-output DP-1 position 3000 210
+output DP-1 position 2446 210
 
 ### Idle configuration
 #
@@ -69,6 +70,11 @@ output DP-1 position 3000 210
 # Read `man 5 sway-input` for more information about this section.
 
 input type:keyboard xkb_file /home/vozhyk/.Xkeymap
+
+input 1118:36:Microsoft_Microsoft_Trackball_Explorer® {
+    scroll_method on_button_down
+    scroll_button button8
+}
 
 ### Key bindings
 #
