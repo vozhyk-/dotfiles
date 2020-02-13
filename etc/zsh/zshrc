@@ -150,9 +150,9 @@ bindkey -e
 
 
 ## Heta dla kalarovaha prompt:a
-autoload -U compinit promptinit
+autoload -U compinit
 compinit
-promptinit; #prompt gentoo
+promptinit
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh/cache
