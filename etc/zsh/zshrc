@@ -127,6 +127,11 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 
+dotfile_user="wbajaryn"
+dotfile_user_home="$(realpath "~$dotfile_user")"
+src="${dotfile_user_home}/src"
+dev="${dotfile_user_home}/dev"
+
 zstyle ':completion:*' accept-exact-dirs 'yes'
 
 ## Z Gentoo:uskaha gida (http://www.gentoo.org/doc/en/zsh.xml)
@@ -256,8 +261,7 @@ export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support
 
 export PYTHONPATH=/mnt/dev/devj/python/modules
 
-#source /mnt/dev/bash/devsmth
-source /mnt/src/sh-utils/bashrc/goback
+source "${src}"/sh-utils/bashrc/goback
 export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin"
 
 rcsv(){
@@ -344,7 +348,7 @@ alias chx='chmod +x'
 alias hr='hash -r'
 alias hd='hexdump -C'
 # git
-source /mnt/src/oh-my-zsh/plugins/git/git.plugin.zsh
+source "${src}"/oh-my-zsh/plugins/git/git.plugin.zsh
 
 alias gd='git diff -M'
 alias gsh='git show -M'
@@ -386,6 +390,6 @@ alias -g XARG='-print0 | xargs -0'
 
 h=--help
 
-eval `dircolors /mnt/src/dircolors-solarized/dircolors.256dark`
+eval `dircolors "${src}"/dircolors-solarized/dircolors.256dark`
 # colored completion - use LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
