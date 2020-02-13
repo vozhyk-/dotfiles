@@ -15,6 +15,9 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
+;; Avoid the default Mac Command-h shortcut.
+(setq mac-pass-command-to-system nil)
+
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 (require 'ergoemacs-mode)
 ;(load-file "~/.emacs.d/elpa/ergoemacs-keybindings-20120814.1528/ergoemacs-mode.el")
