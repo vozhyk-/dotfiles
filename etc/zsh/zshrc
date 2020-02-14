@@ -128,7 +128,8 @@ compinit
 # Lines configured by zsh-newuser-install
 
 dotfile_user="wbajaryn"
-dotfile_user_home="$(realpath "~$dotfile_user")"
+dotfile_user_tilde_home="~${dotfile_user}"
+dotfile_user_home=${~dotfile_user_tilde_home}
 src="${dotfile_user_home}/src"
 dev="${dotfile_user_home}/dev"
 
