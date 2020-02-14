@@ -352,7 +352,7 @@ alias chx='chmod +x'
 alias hr='hash -r'
 alias hd='hexdump -C'
 # git
-source "${src}"/oh-my-zsh/plugins/git/git.plugin.zsh
+source "${src}"/ohmyzsh/plugins/git/git.plugin.zsh
 
 alias gd='git diff -M'
 alias gsh='git show -M'
