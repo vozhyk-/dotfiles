@@ -153,7 +153,6 @@ bindkey -e
 ## Heta dla kalarovaha prompt:a
 autoload -U compinit
 compinit
-promptinit
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh/cache
