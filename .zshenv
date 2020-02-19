@@ -1,5 +1,5 @@
 [[ -s "/home/vozhyk/.gvm/scripts/gvm" ]] && source "/home/vozhyk/.gvm/scripts/gvm"
-export GOPATH="/home/vozhyk/dev/go"
+export GOPATH="$HOME/dev/go"
 
 [[ -s "/home/vozhyk/.cargo/env" ]] && source ~/.cargo/env
 
