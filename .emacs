@@ -18,6 +18,9 @@
 ;; Avoid the default Mac Command-h shortcut.
 (setq mac-pass-command-to-system nil)
 
+(setq mac-command-modifier 'control)
+(setq mac-option-modifier 'meta)
+
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 (require 'ergoemacs-mode)
 ;(load-file "~/.emacs.d/elpa/ergoemacs-keybindings-20120814.1528/ergoemacs-mode.el")
