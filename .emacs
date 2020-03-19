@@ -91,7 +91,11 @@
 (define-key key-translation-map (kbd "M-n") (kbd "<right>"))
 
 (define-key key-translation-map (kbd "M-e") (kbd "DEL")) ; Backspace
-(define-key key-translation-map (kbd "M-u") (kbd "<delete>")) ; Backspace
+(define-key key-translation-map (kbd "M-u") (kbd "<delete>")) ; Delete
+
+(define-key key-translation-map (kbd "M-.") (kbd "M-DEL")) ; M-Backspace
+(define-key key-translation-map (kbd "M-p") (kbd "M-<delete>")) ; M-Delete
+
 (define-key key-translation-map (kbd "M-m") (kbd "RET"))
 
 
