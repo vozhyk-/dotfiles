@@ -2,6 +2,9 @@
 -- modified to:
 -- - reverse vertical+horizontal scroll direction consistently
 -- - use the back button for scrolling
+-- - when the back button is pressed and released and the cursor is not moved,
+--   send Command-left instead of the back button
+-- - send Command-right when the forward button is pressed
 
 -- HANDLE SCROLLING WITH MOUSE BUTTON PRESSED
 local scrollMouseButton = 3 -- 0-indexed; back button
@@ -10,8 +13,7 @@ local deferred = false
 overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
     -- print("down")
     local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
-    if scrollMouseButton == pressedMouseButton 
-    then
+    if scrollMouseButton == pressedMouseButton then
         deferred = true
         return true
     end
@@ -37,11 +39,7 @@ overrideOtherMouseUp = hs.eventtap.new({ hs.eventtap.event.types.otherMouseUp },
 end)
 
 function sendBack()
-    hs.eventtap.keyStroke({"cmd"}, "[")
-end
-
-function sendForward()
-    hs.eventtap.keyStroke({"cmd"}, "]")
+    hs.eventtap.keyStroke({"cmd"}, "left")
 end
 
 local oldmousepos = {}
@@ -69,3 +67,22 @@ end)
 overrideOtherMouseDown:start()
 overrideOtherMouseUp:start()
 dragOtherToScroll:start()
+
+
+-- CONVERT THE FORWARD MOUSE BUTTON TO Command-RIGHT
+
+local forwardMouseButton = 4
+
+function sendForward()
+    hs.eventtap.keyStroke({"cmd"}, "right")
+end
+
+forwardToForward = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
+    if e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber']) ~= forwardMouseButton then
+        return false
+    end
+
+    sendForward()
+    return true
+end)
+forwardToForward:start()
