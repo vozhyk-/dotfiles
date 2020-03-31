@@ -78,8 +78,11 @@
 
 (define-key F9-map (kbd "d") 'cd)
 (define-key F9-map (kbd "SPC") 'get-term)
+(define-key F9-map (kbd "c") 'magit-status)
+(define-key F9-map (kbd "l") 'magit-clone)
 (define-key F9-map (kbd "*") 'save-buffer)
 (define-key F9-map (kbd ")") 'save-buffer)
+(define-key F9-map (kbd "+") 'save-buffer)
 (define-key F9-map (kbd "<f9>") 'save-buffer)
 (define-key F9-map (kbd "g") 'previous-buffer)
 (define-key F9-map (kbd "r") 'next-buffer)
