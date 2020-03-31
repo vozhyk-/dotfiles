@@ -1,0 +1,94 @@
+* Applications
+** Amethyst
+*** Settings
+**** Follow thrown windows between spaces
+**** Keybindings
+***** H-SPC, H-S-SPC: cycle layouts forward/backwards
+***** H-[,.]: Increase/Decrease main pane count
+***** H-[ct]: Move focus {counter,}clockwise
+***** H-[CT]: Swap focused window ^^^
+***** H-[hn]: Move focus to {counter,}clockwise screen
+***** H-[HN]: Swap focused window to ^^^
+***** H-RET: Swap focused window with main window
+***** H-m: Toggle float for focused window
+***** H-u: Select fullscreen layout
+***** H-Z: Relaunch Amethyst
+**** Focus follows mouse
+**** Swap, Resize windows using mouse
+**** Floating
+***** Float small windows
+***** com.apple.systempreferences
+***** com.microsoft.autoupdate2
+** Apptivate
+** Hammerspoon
+** iTerm
+** Karabiner-Elements
+** Scroll Reverser
+* brews
+** coreutils
+** htop
+** pass
+** python@3.8
+** sshfs
+** the_silver_searcher
+** wget
+* brew casks
+** font-dejavu-sans
+** osxfuse
+* Automator scripts
+** Applications/"Emacs from zsh.app"
+
+
+* Preferences
+** Green
+** [ ] Use font smoothing when available
+** Dock: Left
+** Dock: Medium size
+** Double-click a window's title bar to: zoom
+** Automatically hide and show the Dock
+** [ ] Automatically rearrange Spaces...
+** Displays have separate spaces
+** Top-Left Hot Corner: Mission Control
+** Region: Poland (Custom) (ISO dates as much as possible)
+** Keyboard
+*** Key Repeat: Max
+*** Delay Until Repeat: one tick more than Short
+*** Touch Bar Compact Control Strip
+**** Brightess Slider
+**** Volume Slider
+**** Volume Mute
+**** Lock Screen
+*** Touch Bar Complete Control Strip
+**** x
+**** x
+**** Keyboard Brightess -/+
+**** Media </||/>
+**** Keyboard Layout
+**** <buttons from the compact version>
+*** TouchBar in Emacs shows F-keys; the complete Control Strip on Fn-
+*** Use F-keys as F-keys on external keyboards
+*** Modifiers
+**** Internal Keyboard
+***** Control -> Command
+***** Option -> Control
+***** Command -> Option
+*** Shortcuts
+**** Switching workspaces with H-{g,r} and H-{&,[,{,},(,=}
+**** Spotlight (App Launcher) with Hyper-e
+**** Lock Screen with C-M-l (Command-Option-l)
+** Trackpad
+*** Swipe between pages: 2 fingers
+*** Swipe between full-screen apps: 4 fingers
+*** Scroll Direction: Natural
+*** Tap to click
+*** Tracking speed: 2 ticks below Fast
+** Mouse
+*** Tracking Speed: maximum
+*** Scrolling speed: 2 ticks below Fast
+*** Double-Click speed: 1 tick below Fast
+*** Scroll direction: natural
+     (but reversed with Scroll Reverser, so that it's normal)
+** Display
+*** Resolution: Default for display
+**** or Scaled with things a bit larger than Default; "looks like 1280x800"
+*** Night Shift: Sunset to Sunrise
