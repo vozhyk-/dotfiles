@@ -181,6 +181,7 @@ header"
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c-c++-header))
 (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
+(add-to-list 'auto-mode-alist '("\\.ebuild\\'" . shell-script-mode))
 
 (ignore-errors
   (require 'ansi-color)
