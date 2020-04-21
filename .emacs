@@ -42,9 +42,7 @@
 
 (savehist-mode 1)
 
-(setq save-place-file "~/.emacs.d/saveplace")
-(setq-default save-place t)
-(require 'saveplace)
+(save-place-mode 1)
 
 (global-set-key (kbd "H-s") 'get-term)
 (global-set-key (kbd "H-S") 'get-term)
