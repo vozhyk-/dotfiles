@@ -470,8 +470,7 @@ header"
  '(magit-push-arguments (quote ("--force-with-lease")))
  '(magit-rebase-arguments (quote ("--autosquash" "--autostash")))
  '(package-selected-packages
-   (quote
-    (yasnippet yaml-mode vlf tern slime scala-mode rust-mode rinari qml-mode plantuml-mode mentor markdown-mode magit logview imenu-anywhere hungry-delete helm-projectile helm-gitlab helm-ag godoctor git-link ggtags flycheck fill-column-indicator feature-mode evil ergoemacs-keybindings emmet-mode dockerfile-mode csharp-mode company-go company-anaconda column-enforce-mode color-theme-solarized cmake-font-lock ag)))
+   '(multi-vterm vterm highlight color-identifiers-mode yasnippet yaml-mode vlf tern slime scala-mode rust-mode rinari qml-mode plantuml-mode mentor markdown-mode magit logview imenu-anywhere hungry-delete helm-projectile helm-gitlab helm-ag godoctor git-link ggtags flycheck fill-column-indicator feature-mode evil ergoemacs-keybindings emmet-mode dockerfile-mode csharp-mode company-go company-anaconda column-enforce-mode color-theme-solarized cmake-font-lock ag))
  '(plantuml-jar-path "/home/vozhyk/src/plantuml.jar")
  '(safe-local-variable-values
    (quote

@@ -1,0 +1,13 @@
+# Target labels
+ libvterm
+# Source files and their labels
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/CMakeFiles/libvterm
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/CMakeFiles/libvterm.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/CMakeFiles/libvterm-complete.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-install.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-mkdir.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-download.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-update.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-patch.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-configure.rule
+/mnt/dev/dotfiles/.emacs.d/elpa/vterm-20200411.259/build/libvterm-prefix/src/libvterm-stamp/libvterm-build.rule

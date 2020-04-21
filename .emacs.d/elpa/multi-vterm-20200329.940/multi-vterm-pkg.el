@@ -1,0 +1,2 @@
+;;; Generated package description from /home/vozhyk/.emacs.d/elpa/multi-vterm-20200329.940/multi-vterm.el  -*- no-byte-compile: t -*-
+(define-package "multi-vterm" "20200329.940" "Like multi-term.el but for vterm" '((emacs "26.3") (vterm "0.0") (projectile "1.2.0")) :commit "f43f68ad849647b8a1dfd254a57d1c5a2599a24a" :keywords '("terminals" "processes") :url "https://github.com/suonlight/multi-libvterm")
