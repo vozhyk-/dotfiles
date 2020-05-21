@@ -175,6 +175,9 @@ key[Delete]=${terminfo[kdch1]}
 key[PageUp]=${terminfo[kpp]}
 key[PageDown]=${terminfo[knp]}
 
+key[ControlDelete]="${terminfo[kDC5]}"
+key[AltDelete]="${terminfo[kDC3]}"
+
 # setup key accordingly
 [[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
 [[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
@@ -188,6 +191,9 @@ bindkey "^[[F" end-of-line
 [[ -n "${key[PageDown]}"    ]]  && bindkey  "${key[PageDown]}"    end-of-history
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+
+[[ -n "${key[ControlDelete]}" ]]  && bindkey "${key[ControlDelete]}" kill-word
+[[ -n "${key[AltDelete]}" ]]      && bindkey "${key[AltDelete]}"     kill-word
 
 bindkey ';5D' emacs-backward-word ## Ctrl-str. uleva
 bindkey ';5C' emacs-forward-word  ##        || uprava

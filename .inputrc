@@ -1,5 +1,12 @@
 $include /etc/inputrc
 
+# Control-Delete
+"\e[3;5~": kill-word
+# Alt-Delete
+"\e[3;3~": kill-word
+
+# ErgoEmacs keys
+
 "\eh": backward-char
 "\en": forward-char
 "\ec": previous-history
