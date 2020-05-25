@@ -303,35 +303,10 @@ mode "control" {
         bindsym Control+Mod5+w mode "default"
 }
 
-mode "wallpaper" {
-        bindsym n exec --no-startup-id random-wallpaper; mode "default"
-        bindsym o exec gwenview "`last-wallpaper 1`"; mode "default"
-        #bindsym d exec i3-nagbar -t warning -m 'Do you really want to delete ``'"$(last-wallpaper 1)''?" -b "Yes" "rm $(last-wallpaper 1)"; mode "default"
-	bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 1`"; mode "default"
-
-        bindsym p mode "wallpaper-prev"
-        bindsym b mode "wallpaper-prev"
-
-        bindsym Control+g mode "default"
-        bindsym $mod+g    mode "default"
-        bindsym Escape    mode "default"
-}
-mode "wallpaper-prev" {
-        bindsym o exec gwenview "`last-wallpaper 2`"; mode "default"
-        bindsym p exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-        bindsym b exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-        bindsym s exec --no-startup-id set-wallpaper "`last-wallpaper 2`"; mode "default"
-
-        bindsym Control+g mode "default"
-        bindsym $mod+g           mode "default"
-        bindsym Escape           mode "default"
-}
-
 bindsym $mod+p mode "resize"
 bindsym $mod+a mode "exec"
 bindsym Control+XF86AudioRaiseVolume mode "exec"
 bindsym Control+Mod5+m mode "control"
-bindsym $mod+w mode "wallpaper"
 
 new_float pixel 2
 hide_edge_borders both
