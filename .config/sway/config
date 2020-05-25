@@ -15,6 +15,12 @@ set $shell zsh
 set $file_manager dolphin
 
 output eDP-1 scale 2
+input 2:7:SynPS/2_Synaptics_TouchPad {
+	natural_scroll enabled
+	tap enabled
+	click_method clickfinger
+}
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
