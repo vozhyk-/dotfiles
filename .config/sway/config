@@ -31,6 +31,8 @@ input 2:7:SynPS/2_Synaptics_TouchPad {
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
 
+hide_edge_borders both
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -299,9 +301,6 @@ bindsym $mod+p mode "resize"
 bindsym $mod+a mode "exec"
 bindsym Control+XF86AudioRaiseVolume mode "exec"
 bindsym Control+Mod5+m mode "control"
-
-new_float pixel 2
-hide_edge_borders both
 
 for_window [class="Plasma-desktop"] border none
 for_window [class="krunner"] border none
