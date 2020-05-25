@@ -321,10 +321,21 @@ mode "control" {
         bindsym Control+Mod5+w mode "default"
 }
 
+mode "screenshot" {
+	bindsym Print exec grimshot save screen; mode "default"
+	bindsym s     exec grimshot save output; mode "default"
+	bindsym w     exec grimshot save active; mode "default"
+	bindsym a     exec grimshot save area; mode "default"
+
+	bindsym Escape mode "default"
+	bindsym Control+g mode "default"
+}
+
 bindsym $mod+p mode "resize"
 bindsym $mod+a mode "exec"
 bindsym Control+XF86AudioRaiseVolume mode "exec"
 bindsym Control+Mod5+m mode "control"
+bindsym Print mode "screenshot"
 
 for_window [class="Plasma-desktop"] border none
 for_window [class="krunner"] border none
