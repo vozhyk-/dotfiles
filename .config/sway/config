@@ -30,6 +30,11 @@ input type:keyboard {
 	xkb_options caps:hyper,shift:both_capslock,altwin:ctrl_win
 }
 
+input 1118:36:Microsoft_Microsoft_Trackball_Explorer® {
+	scroll_method on_button_down
+	scroll_button button8
+}
+
 input 2:7:SynPS/2_Synaptics_TouchPad {
 	natural_scroll enabled
 	tap enabled
