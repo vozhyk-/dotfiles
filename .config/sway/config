@@ -13,7 +13,6 @@ set $right n
 set $term konsole
 set $shell zsh
 set $file_manager dolphin
-set $arch schroot
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
