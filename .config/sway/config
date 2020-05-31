@@ -355,5 +355,5 @@ for_window [class="Clementine"] move container to workspace number 10: music
 
 bar {
 	position bottom
-	status_command while date +'%F %T'; do sleep 1; done
+	status_command i3status
 }
