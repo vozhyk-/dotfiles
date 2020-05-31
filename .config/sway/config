@@ -199,6 +199,9 @@ bindsym $mod+Shift+j reload
 # Exit sway (logs you out of your Wayland session)
 bindsym Control+Alt+Delete exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
+bindsym XF86MonBrightnessDown exec sudo light -U 2
+bindsym XF86MonBrightnessUp   exec sudo light -A 2
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
