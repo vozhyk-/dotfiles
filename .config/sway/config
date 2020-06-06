@@ -372,6 +372,5 @@ for_window [class="Pidgin"] move container to workspace number 4: doc
 for_window [class="Clementine"] move container to workspace number 10: music
 
 bar {
-	position bottom
-	status_command i3status
+	swaybar_command waybar
 }
