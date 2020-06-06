@@ -356,10 +356,9 @@ bindsym Control+XF86AudioRaiseVolume mode "exec"
 bindsym Control+Mod5+m mode "control"
 bindsym Print mode "screenshot"
 
-for_window [class="Plasma-desktop"] border none
-for_window [class="krunner"] border none
-for_window [class="Kmix"] floating enable;
-for_window [class="Pavucontrol"] floating enable;
+for_window [app_id="org.kde.krunner"] border none
+for_window [app_id="org.kde.kruler"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 for_window [class="Plasmoidviewer"] floating enable;
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Conky"] floating enable; border none
