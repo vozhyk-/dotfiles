@@ -201,8 +201,8 @@ bindsym $mod+Shift+j reload
 bindsym Control+Alt+Delete exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 set $vol_mute pactl set-sink-mute @DEFAULT_SINK@ toggle
-set $vol_down pactl set-sink-volume @DEFAULT_SINK@ -2%
-set $vol_up   pactl set-sink-volume @DEFAULT_SINK@ +2%
+set $vol_down pactl set-sink-volume @DEFAULT_SINK@ -1%
+set $vol_up   pactl set-sink-volume @DEFAULT_SINK@ +1%
 set $mic_mute pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 bindsym XF86AudioMute         exec $vol_mute
