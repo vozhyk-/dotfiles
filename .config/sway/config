@@ -214,8 +214,8 @@ bindsym $mod+Mod1+comma     exec $vol_down
 bindsym $mod+Mod1+period    exec $vol_up
 bindsym $mod+Mod1+p         exec $mic_mute
 
-bindsym XF86MonBrightnessDown exec sudo light -U 2
-bindsym XF86MonBrightnessUp   exec sudo light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
+bindsym XF86MonBrightnessUp   exec light -A 2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
