@@ -1,14 +1,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "DejaVu Sans Mono", "Font Awesome 5 Free";
+    font-size: 11px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -27,20 +26,11 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -59,11 +49,6 @@ window#waybar.chromium {
     background-color: #eb4d4b;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 #clock,
 #battery,
 #cpu,
@@ -76,13 +61,29 @@ window#waybar.chromium {
 #tray,
 #mode,
 #idle_inhibitor {
-    padding: 0 10px;
-    margin: 0 4px;
+    padding: 0 4px;
+    margin: 0 1px;
     color: #ffffff;
 }
 
-#clock {
+#clock { /* the rightmost block */
+    background-color: #000000;
+    padding-left: 3px;
+    margin: 0;
+}
+
+#pulseaudio { /* the block to the right of "window" */
+    margin-left: 3px;
+}
+
+#workspaces { /* the block to the left of "window", if "mode" is not shows */
+    margin-right: 3px;
+}
+
+#mode {
     background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+    margin: 0 5px;
 }
 
 #battery {
