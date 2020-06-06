@@ -376,3 +376,5 @@ bar {
 }
 
 exec rot8
+exec kioclient5 exec /etc/xdg/autostart/geoclue-demo-agent.desktop
+exec redshift-gtk
