@@ -57,6 +57,7 @@ input 2:7:SynPS/2_Synaptics_TouchPad {
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
 
+default_border pixel 2
 hide_edge_borders both
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -135,7 +136,7 @@ bindsym $mod+m focus mode_toggle
 
 bindsym $mod+v move position center
 
-bindsym $mod+b border none
+bindsym $mod+b border toggle
 
 # focus the parent container
 bindsym $mod+semicolon focus parent
