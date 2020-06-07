@@ -15,8 +15,8 @@
         "backlight",
         "battery#stylus",
         "battery",
-        "network",
         "tray",
+        "network",
         "clock"
     ],
     // Modules configuration
