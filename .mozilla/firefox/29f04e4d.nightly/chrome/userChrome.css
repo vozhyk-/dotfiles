@@ -1,0 +1,14 @@
+/* modified from:
+ * https://www.reddit.com/r/FirefoxCSS/comments/ejhzxl/make_the_background_of_the_tab_area_transparent/fcyqkht/
+ */
+
+#titlebar, window, #main-window, #toolbar-menubar, #TabsToolbar, #PersonalToolbar, #navigator-toolbox{
+    background-color: transparent !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-image: none !important;
+}
+
+#main-window{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
