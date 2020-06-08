@@ -8,6 +8,8 @@ set $right n
 
 set $term konsole
 set $shell zsh
+set $emacs $shell -c "GDK_BACKEND=wayland emacs-28"
+set $emacsclient emacsclient-emacs-28
 set $file_manager dolphin
 
 output eDP-1 {
@@ -251,9 +253,9 @@ mode "exec" {
         bindsym z exec $term -e 'sudo su'; mode "default"
         bindsym b exec $term -e 'bc -l'; mode "default"
 
-        bindsym Shift+e exec $shell -c emacs; mode "default"
-        bindsym e exec --no-startup-id emacsclient -c; mode "default"
-        bindsym c exec --no-startup-id emacsclient -c ~/.i3/config; mode "default"
+        bindsym Shift+e exec $emacs; mode "default"
+        bindsym e exec --no-startup-id $emacsclient -c; mode "default"
+        bindsym c exec --no-startup-id $emacsclient -c ~/.config/sway/config; mode "default"
         bindsym s exec systemsettings5; mode "default"
         bindsym Shift+n exec nsight; mode "default"
 
