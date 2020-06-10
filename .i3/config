@@ -330,7 +330,7 @@ bindsym $mod+w mode "wallpaper"
 new_float pixel 2
 hide_edge_borders both
 
-for_window [class="Plasma-desktop"] border none
+for_window [title="Desktop — Plasma"] kill
 for_window [class="krunner"] border none
 for_window [class="Kmix"] floating enable;
 for_window [class="Pavucontrol"] floating enable;
