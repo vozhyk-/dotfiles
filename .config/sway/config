@@ -8,8 +8,8 @@ set $right n
 
 set $term konsole
 set $shell zsh
-set $emacs $shell -c "GDK_BACKEND=wayland emacs-28"
-set $emacsclient emacsclient-emacs-28
+set $emacs $shell -c "GDK_BACKEND=wayland emacs-28-vcs"
+set $emacsclient emacsclient-emacs-28-vcs
 set $file_manager dolphin
 
 output eDP-1 {
