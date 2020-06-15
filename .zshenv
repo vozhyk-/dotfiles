@@ -5,4 +5,4 @@ fi
 
 [[ -s "/home/vozhyk/.cargo/env" ]] && source ~/.cargo/env
 
-export PATH="$PATH:/home/vozhyk/src/android-sdk/tools:$GOPATH/bin"
+export PATH="$PATH:/home/vozhyk/bin:/home/vozhyk/src/android-sdk/tools:$GOPATH/bin"

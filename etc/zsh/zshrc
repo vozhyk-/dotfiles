@@ -256,7 +256,7 @@ export NETHACKOPTIONS="number_pad:1,standout,time,color,hilite_pet,mouse_support
 
 source /mnt/dev/bash/devsmth
 source /mnt/src/sh-utils/bashrc/goback
-export PATH="$PATH:/usr/local/bin:/home/vozhyk/bin"
+export PATH="$PATH:/usr/local/bin"
 
 sv(){
     act="$1"; shift
