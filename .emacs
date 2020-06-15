@@ -77,7 +77,8 @@
 (define-key F9-map (kbd "g") 'previous-buffer)
 (define-key F9-map (kbd "r") 'next-buffer)
 
-(global-set-key (kbd "C-c a") 'helm-do-ag)
+(global-set-key (kbd "C-c a") 'helm-projectile-ag)
+(global-set-key (kbd "C-c A") 'helm-do-ag)
 ; TODO bind it only for files under Git
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c b") 'magit-blame)
