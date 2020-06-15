@@ -298,11 +298,13 @@ header"
     (c-set-style "sun")
     (setq indent-tabs-mode t)))
 
-;(add-hook 'c-mode-hook 'maybe-sun-style)
+(defun maybe-column-enforce ()
+  (unless (and buffer-file-name
+               (string-match "qmk" buffer-file-name))
+    (column-enforce-mode 1)))
 
 (defun C-hook ()
   (compiled-lang-hook)
-  (column-enforce-mode 1)
   (setq c-basic-offset 4)
   (setq indent-tabs-mode nil)
 ;;; --- --- --- --- --- --- --- --- C tab && space indent --- --- --- --- --- --- --- ---
@@ -350,6 +352,7 @@ header"
   ;; (smart-tabs-advice c-indent-region c-basic-offset)
 ;;; --- --- --- --- --- --- --- --- end --- --- --- --- --- --- --- ---
   (maybe-sun-style)
+  (maybe-column-enforce)
 )
 
 (defun go-hook ()
