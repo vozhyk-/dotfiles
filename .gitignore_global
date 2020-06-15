@@ -11,6 +11,11 @@ auto-save-list
 tramp
 .\#*
 
+# ggtags
+GPATH
+GRTAGS
+GTAGS
+
 # Org-mode
 .org-id-locations
 *_archive
