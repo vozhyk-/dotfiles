@@ -142,6 +142,7 @@ bindsym Control+Shift+XF86AudioNext workspace next
 bindsym $mod+s workspace back_and_forth
 bindsym $mod+space workspace back_and_forth
 bindsym XF86Launch1 workspace back_and_forth
+bindsym XF86Favorites workspace back_and_forth
 
 bindsym Mod1+F7 exec --no-startup-id sudo chvt 7
 bindsym Mod1+F8 exec --no-startup-id sudo chvt 8
