@@ -55,6 +55,10 @@
 (global-set-key (kbd "<H-return>") 'smart-open-line-above)
 (global-set-key (kbd "H-M-m") 'smart-open-line-above)
 
+(global-set-key (kbd "<XF86Cut>") 'kill-region)
+(global-set-key (kbd "<XF86Copy>") 'kill-ring-save)
+(global-set-key (kbd "<XF86Paste>") 'yank)
+
 (global-set-key (kbd "M-M") 'auto-goto-defun)
 (global-set-key (kbd "<S-return>") 'auto-goto-defun)
 
