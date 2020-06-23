@@ -12,6 +12,27 @@ set $emacs $shell -c "GDK_BACKEND=wayland emacs-28-vcs"
 set $emacsclient emacsclient-emacs-28-vcs
 set $file_manager dolphin
 
+# MOC:
+# set $music $term -e ~/bin/mocp
+# set $prev_track mocp --previous
+# set $next_track mocp --next
+# set $play_pause mocp --toggle-pause
+
+# Clementine:
+set $music clementine
+# set $prev_track clementine --previous
+# set $next_track clementine --next
+# set $play_pause clementine --play-pause
+
+# MPC:
+# set $music $term -e ncmpcpp
+set $prev_track mpc prev
+set $next_track mpc next
+set $play_pause mpc toggle
+
+# Spotify:
+# set $music spotify
+
 output eDP-1 {
 	scale 2
 	position 0 555
@@ -280,14 +301,7 @@ mode "exec" {
 	#bindsym s exec skype; mode "default"
 	bindsym t exec thunderbird; mode "default"
 	#bindsym Shift+s exec smplayer; mode "default"
-	# MOC:
-	#bindsym m exec $term -e ~/bin/mocp; mode "default"
-	# Clementine:
-	bindsym m exec clementine; mode "default"
-	# MPC:
-	#bindsym m exec $term -e ncmpcpp; mode "default"
-	# Spotify:
-	#bindsym m exec spotify; mode "default"
+	bindsym m exec $music; mode "default"
 	bindsym Shift+t exec ktorrent; mode "default"
 	bindsym k exec krusader; mode "default"
 	bindsym v exec VirtualBox; mode "default"
@@ -328,20 +342,9 @@ mode "control" {
 	# Switch mono/stereo
 	bindsym b exec --no-startup-id paswitch; mode "default"
 
-        # MOC:
-        #bindsym h     exec --no-startup-id mocp --previous; mode "default"
-        #bindsym n     exec --no-startup-id mocp --next; mode "default"
-        #bindsym space exec --no-startup-id mocp --toggle-pause; mode "default"
-	
-        # Clementine:
-        #bindsym h     exec --no-startup-id clementine --previous; mode "default"
-        #bindsym n     exec --no-startup-id clementine --next; mode "default"
-        #bindsym space exec --no-startup-id clementine --play-pause; mode "default"
-
-        # MPC:
-        bindsym h     exec --no-startup-id mpc prev; mode "default"
-        bindsym n     exec --no-startup-id mpc next; mode "default"
-        bindsym space exec --no-startup-id mpc toggle; mode "default"
+        bindsym h     exec --no-startup-id $prev_track; mode "default"
+        bindsym n     exec --no-startup-id $next_track; mode "default"
+        bindsym space exec --no-startup-id $play_pause; mode "default"
 	
         bindsym Escape         mode "default"
         bindsym Control+Mod5+w mode "default"
