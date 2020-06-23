@@ -83,7 +83,7 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "⚠",
-        "on-click": "konsole -e nmtui"
+        "on-click": "plasmawindowed org.kde.plasma.networkmanagement"
     },
     "pulseaudio": {
         "scroll-step": 0.5, // %, can be a float
