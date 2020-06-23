@@ -26,9 +26,14 @@ set $music clementine
 
 # MPC:
 # set $music $term -e ncmpcpp
-set $prev_track mpc prev
-set $next_track mpc next
-set $play_pause mpc toggle
+# set $prev_track mpc prev
+# set $next_track mpc next
+# set $play_pause mpc toggle
+
+# MPRIS music control
+set $prev_track timeout 0.5 playerctl previous
+set $next_track timeout 0.5 playerctl next
+set $play_pause timeout 0.5 playerctl play-pause
 
 output eDP-1 {
 	scale 2
