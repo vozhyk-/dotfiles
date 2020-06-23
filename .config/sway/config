@@ -236,6 +236,10 @@ bindsym $mod+Mod1+p         exec $mic_mute
 bindsym XF86MonBrightnessDown exec light -U 2
 bindsym XF86MonBrightnessUp   exec light -A 2
 
+bindsym XF86AudioPrev exec $prev_track
+bindsym XF86AudioNext exec $next_track
+bindsym XF86AudioPlay exec $play_pause
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
