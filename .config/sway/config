@@ -30,9 +30,6 @@ set $prev_track mpc prev
 set $next_track mpc next
 set $play_pause mpc toggle
 
-# Spotify:
-# set $music spotify
-
 output eDP-1 {
 	scale 1.40556
 	position 0 420
