@@ -183,10 +183,10 @@ bindsym Control+XF86Forward workspace next
 bindsym Control+Shift+XF86AudioPrev workspace prev
 bindsym Control+Shift+XF86AudioNext workspace next
 
-bindsym $mod+s workspace back_and_forth
-bindsym $mod+space workspace back_and_forth
-bindsym XF86Launch1 workspace back_and_forth
-bindsym XF86Favorites workspace back_and_forth
+bindsym $mod+s nop back_within_output
+bindsym $mod+space nop back_within_output
+bindsym XF86Launch1 nop back_within_output
+bindsym XF86Favorites nop back_within_output
 
 bindsym Mod1+F7 exec --no-startup-id sudo chvt 7
 bindsym Mod1+F8 exec --no-startup-id sudo chvt 8
@@ -376,5 +376,6 @@ bar {
 	swaybar_command waybar
 }
 
+exec /mnt/src/wf-utils/i3/i3-back_within_output
 exec kioclient5 exec /etc/xdg/autostart/geoclue-demo-agent.desktop
 exec redshift-gtk
