@@ -13,13 +13,13 @@ set $emacsclient emacsclient
 set $file_manager dolphin
 
 # MOC:
-# set $music $term -e ~/bin/mocp
-# set $prev_track mocp --previous
-# set $next_track mocp --next
-# set $play_pause mocp --toggle-pause
+set $music $term -e ~/bin/mocp
+set $prev_track mocp --previous
+set $next_track mocp --next
+set $play_pause mocp --toggle-pause
 
 # Clementine:
-set $music clementine
+# set $music clementine
 # set $prev_track clementine --previous
 # set $next_track clementine --next
 # set $play_pause clementine --play-pause
@@ -31,9 +31,9 @@ set $music clementine
 # set $play_pause mpc toggle
 
 # MPRIS music control
-set $prev_track timeout 0.5 playerctl previous
-set $next_track timeout 0.5 playerctl next
-set $play_pause timeout 0.5 playerctl play-pause
+# set $prev_track timeout 0.5 playerctl previous
+# set $next_track timeout 0.5 playerctl next
+# set $play_pause timeout 0.5 playerctl play-pause
 
 output eDP-1 {
 	scale 1.40556
