@@ -29,8 +29,8 @@ output "Dell Inc. DELL P2417H CW6Y767B0M8B" {
 }
 
 input type:keyboard {
-	xkb_layout us,us,by,pl,ru,by,us,pl
-	xkb_variant dvp,,,dvp,,latin,dvorak-l,
+	xkb_layout pl,pl,by,by,ru,us
+	xkb_variant dvp,,,latin,,dvorak-l
 	xkb_options grp:menu_toggle,caps:hyper,shift:both_capslock
 }
 
