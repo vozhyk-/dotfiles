@@ -57,7 +57,7 @@ input type:keyboard {
 	xkb_options grp:menu_toggle,caps:hyper,shift:both_capslock
 }
 
-input 1118:36:Microsoft_Microsoft_Trackball_Explorer® {
+input 1118:36:Microsoft_Microsoft_Trackball_Explorer__ {
 	scroll_method on_button_down
 	scroll_button button8
 }
