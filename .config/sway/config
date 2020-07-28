@@ -378,7 +378,7 @@ for_window [class="Thunderbird"] move container to workspace number 7
 for_window [class="Clementine"] move container to workspace number 10
 
 bar {
-	swaybar_command waybar
+	swaybar_command /home/vozhyk/bin/waybar
 }
 
 exec /mnt/src/wf-utils/i3/i3-back_within_output
