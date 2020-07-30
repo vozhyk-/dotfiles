@@ -46,6 +46,11 @@ input 1118:36:Microsoft_Microsoft_Trackball_Explorer__ {
 	scroll_button button8
 }
 
+input 4617:14848:Unknown_Ploopy_Trackball {
+	scroll_method on_button_down
+	scroll_button button9
+}
+
 input 2:7:SynPS/2_Synaptics_TouchPad {
 	natural_scroll enabled
 	tap enabled
