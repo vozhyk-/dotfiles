@@ -118,6 +118,7 @@
 	(ccl ("ccl" "-K" "utf-8"))
 	(ecl ("ecl"))))
 (setq slime-net-coding-system 'utf-8-unix)
+(setq slime-contribs '(slime-fancy))
 
 (defun smart-beginning-of-line ()
   "Move point to first non-whitespace character or beginning-of-line.
@@ -447,7 +448,7 @@ header"
     (turn-on-haskell-indentation RET-newline-and-indent)) t)
  '(package-selected-packages
    (quote
-    (cuda-mode yasnippet yaml-mode tern scala-mode rinari mentor markdown-mode magit imenu-anywhere helm ggtags flycheck fill-column-indicator evil ergoemacs-keybindings emmet-mode dockerfile-mode company-go column-enforce-mode color-theme-solarized cmake-font-lock ag)))
+    (helm-ag slime slime-company cuda-mode yasnippet yaml-mode tern scala-mode rinari mentor markdown-mode magit imenu-anywhere helm ggtags flycheck fill-column-indicator evil ergoemacs-keybindings emmet-mode dockerfile-mode company-go column-enforce-mode color-theme-solarized cmake-font-lock ag)))
  '(safe-local-variable-values
    (quote
     ((encoding . utf-8)
