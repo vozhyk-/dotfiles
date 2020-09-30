@@ -384,3 +384,8 @@ bar {
 exec /mnt/src/wf-utils/i3/i3-back_within_output
 exec kioclient5 exec /etc/xdg/autostart/geoclue-demo-agent.desktop
 exec redshift-gtk
+exec swayidle -w \
+	timeout 600 'swaylock -f' \
+	timeout 660 'swaymsg "output * dpms off"' \
+	resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f'
