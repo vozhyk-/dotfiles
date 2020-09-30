@@ -42,7 +42,7 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%F %a %T}",
+        "format": "{:%A %F %T}",
         "tooltip-format": ""
     },
     "backlight": {
