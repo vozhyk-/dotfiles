@@ -172,7 +172,7 @@ bindsym $mod+bracketleft workspace number 2
 bindsym $mod+braceleft workspace number 3
 bindsym $mod+braceright workspace number 4: doc
 bindsym $mod+parenleft workspace number 5: im
-bindsym $mod+equal workspace number 6: gpca
+bindsym $mod+equal workspace number 6: review
 bindsym $mod+asterisk workspace number 7
 bindsym $mod+parenright workspace number 8: work
 bindsym $mod+plus workspace number 9: flame
@@ -202,7 +202,7 @@ bindsym $mod+Shift+7 move container to workspace number 2; workspace number 2
 bindsym $mod+Shift+braceleft move container to workspace number 3; workspace number 3
 bindsym $mod+Shift+braceright move container to workspace number 4: doc; workspace number 4: doc
 bindsym $mod+Shift+1 move container to workspace number 5: im; workspace number 5: im
-bindsym $mod+Shift+9 move container to workspace number 6: gpca; workspace number 6: gpca
+bindsym $mod+Shift+9 move container to workspace number 6: review; workspace number 6: review
 bindsym $mod+Shift+0 move container to workspace number 7; workspace number 7
 bindsym $mod+Shift+2 move container to workspace number 8: work; workspace number 8: work
 bindsym $mod+Shift+4 move container to workspace number 9: flame; workspace number 9: flame
