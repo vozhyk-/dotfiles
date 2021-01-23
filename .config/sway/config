@@ -40,12 +40,12 @@ output eDP-1 {
 	position 0 420
 	background ~/images/90783642f0b093b3b39830411cf219da.jpg fill #000000
 }
-output "Dell Inc. DELL U2312HM KF87Y336AQUL" {
+output "Dell Inc. DELL P2417H CW6Y767B0M8B" {
 	transform 270
 	position 1366 0
 	background ~/images/90783642f0b093b3b39830411cf219da.jpg fill #000000
 }
-output "Dell Inc. DELL P2417H CW6Y767B0M8B" {
+output "Dell Inc. DELL U2312HM KF87Y336AQUL" {
 	transform 270
 	position 2446 0
 	background ~/images/90783642f0b093b3b39830411cf219da.jpg fill #000000
