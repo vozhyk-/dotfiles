@@ -523,7 +523,8 @@ header"
      ("M-." . comint-dynamic-complete))))
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
+ '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
+ '(venv-location "/home/vozhyk/src/pyenv/versions"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
