@@ -9,6 +9,8 @@
              '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (add-to-list 'load-path "~/.emacs.d/elisp")
+(add-to-list 'load-path "~/.emacs.d/elisp/openapi-yaml-mode")
+(require 'openapi-yaml-mode)
 ;(require 'darcsum)
 ;(load-file "~/.emacs.d/darcsum")
 ;(load-file "~/.emacs.d/50darcsum")
