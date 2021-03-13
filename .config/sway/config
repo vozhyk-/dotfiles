@@ -37,7 +37,7 @@ set $play_pause timeout 0.5 playerctl play-pause
 
 output eDP-1 {
 	scale 2
-	position 0 555
+	position 0 655
 	background ~/Pictures/gentoo-10-years-compiling-1920x1200.jpg fill #000000
 }
 output "Dell Inc. DELL P2417H CW6Y767B0M8B" {
