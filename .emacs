@@ -92,6 +92,13 @@
 (global-set-key (kbd "C-c b") 'magit-blame)
 (global-set-key (kbd "C-c l") 'git-link)
 
+(when (not window-system)
+  (global-unset-key (kbd "M-O"))
+  (define-key esc-map "O" (make-sparse-keymap))
+  (define-key key-translation-map (kbd "ESC O A") (kbd "<up>"))
+  (define-key key-translation-map (kbd "ESC O B") (kbd "<down>"))
+  (define-key key-translation-map (kbd "ESC O C") (kbd "<left>"))
+  (define-key key-translation-map (kbd "ESC O D") (kbd "<right>")))
 (define-key key-translation-map (kbd "M-c") (kbd "<up>"))
 (define-key key-translation-map (kbd "M-t") (kbd "<down>"))
 (define-key key-translation-map (kbd "M-h") (kbd "<left>"))
