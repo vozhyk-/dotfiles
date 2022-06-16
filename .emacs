@@ -388,6 +388,10 @@ header"
 ;;   (interactive)
 ;;   (find-file "~vozhyk/Vitaut/dox/gtd.org"))
 
+
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/tex-utils")
+(require 'xdvi-search)
+
 ;;; --- --- --- --- --- --- --- ---  ggtags  --- --- --- --- --- --- --- ---
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
