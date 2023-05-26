@@ -1,0 +1,14 @@
+* Install chocolatey and packages from it:
+** git
+** emacs
+** dejavufonts
+** microsoft-windows-terminal
+** openssh
+** realvnc
+** vcxsrv
+** programmer-dvorak
+** sharpkeys
+** x-mouse-button-control
+** powertoys
+*** FancyZones
+** tree
