@@ -466,24 +466,20 @@ header"
  ;; If there is more than one, they won't work right.
  '(company-dabbrev-downcase nil)
  '(custom-safe-themes
-   (quote
-    ("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default)))
+   '("fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" default))
  '(global-rinari-mode t)
  '(gofmt-command "goimports")
- '(haskell-mode-hook
-   (quote
-    (turn-on-haskell-indentation RET-newline-and-indent)) t)
+ '(haskell-mode-hook '(turn-on-haskell-indentation RET-newline-and-indent) t)
  '(helm-ff-history-max-length 1000)
- '(magit-diff-arguments (quote ("--no-ext-diff" "--stat" "-M")))
- '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
- '(magit-push-arguments (quote ("--force-with-lease")))
- '(magit-rebase-arguments (quote ("--autosquash" "--autostash")))
+ '(magit-diff-arguments '("--no-ext-diff" "--stat" "-M"))
+ '(magit-log-arguments '("--graph" "--color" "--decorate" "-n256"))
+ '(magit-push-arguments '("--force-with-lease"))
+ '(magit-rebase-arguments '("--autosquash" "--autostash"))
  '(package-selected-packages
    '(company-terraform terraform-mode systemd magit-gerrit flycheck-gometalinter yasnippet yaml-mode vlf tern slime scala-mode rust-mode rinari qml-mode plantuml-mode mentor markdown-mode magit logview imenu-anywhere hungry-delete helm-projectile helm-gitlab helm-ag godoctor git-link ggtags flycheck fill-column-indicator feature-mode evil ergoemacs-keybindings emmet-mode dockerfile-mode csharp-mode company-go company-anaconda column-enforce-mode color-theme-solarized cmake-font-lock auto-virtualenvwrapper ag))
  '(plantuml-jar-path "/home/vozhyk/src/plantuml.jar")
  '(safe-local-variable-values
-   (quote
-    ((encoding . utf-8)
+   '((encoding . utf-8)
      (Package ITERATE :use "COMMON-LISP" :colon-mode :external)
      (syntax . COMMON-LISP)
      (Syntax . Ansi-Common-Lisp)
@@ -491,11 +487,10 @@ header"
      (Package . CL-FAD)
      (Syntax . COMMON-LISP)
      (Base . 10)
-     (Syntax . ANSI-Common-Lisp))))
+     (Syntax . ANSI-Common-Lisp)))
  '(slime-dfl-use-advanced-faces nil)
  '(term-bind-key-alist
-   (quote
-    (("C-c C-c" . term-interrupt-subjob)
+   '(("C-c C-c" . term-interrupt-subjob)
      ("C-p" . previous-line)
      ("C-n" . next-line)
      ("C-m" . term-send-raw)
@@ -522,10 +517,10 @@ header"
      ("C-r" . term-send-reverse-search-history)
      ("C-s" . term-send-forward-search-history)
      ("M-," . term-send-input)
-     ("M-." . comint-dynamic-complete))))
+     ("M-." . comint-dynamic-complete)))
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
+ '(uniquify-buffer-name-style 'post-forward-angle-brackets nil (uniquify))
  '(venv-location "/home/vozhyk/src/pyenv/versions"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
