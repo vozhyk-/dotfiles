@@ -382,6 +382,7 @@ bar {
 }
 
 exec /mnt/src/wf-utils/i3/i3-back_within_output
+exec mako
 exec redshift-gtk
 exec swayidle -w \
 	timeout 600 'swaylock -f' \
