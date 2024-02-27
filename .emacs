@@ -373,7 +373,8 @@ header"
 (defun python-hook ()
   (RET-newline-and-indent)
   (anaconda-mode 1)
-  (setq-local auto-goto-defun-function (symbol-function 'anaconda-mode-find-definitions)))
+  (setq-local auto-goto-defun-function (symbol-function 'anaconda-mode-find-definitions))
+  (flycheck-select-checker 'python-flake8))
 
 ;(defun kill-buf-emacsclient ()
 ;  (local-set-key "\C-w" 'server-edit))
