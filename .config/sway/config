@@ -285,8 +285,8 @@ mode "exec" {
         bindsym Shift+n exec nsight; mode "default"
 
         bindsym d exec $file_manager; mode "default"
-        bindsym f exec GDK_BACKEND=wayland /mnt/src/firefox/firefox; mode "default"
-        bindsym Shift+f exec firefox; mode "default"
+        bindsym f exec firefox; mode "default"
+        bindsym Shift+f exec GDK_BACKEND=wayland /mnt/src/firefox/firefox; mode "default"
         bindsym Return exec firefox; mode "default"
         #bindsym Shift+c exec google-chrome-stable; mode "default"
         bindsym Shift+c exec chromium; mode "default"
