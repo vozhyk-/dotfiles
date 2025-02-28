@@ -13,9 +13,12 @@
     "modules-right": [
         "pulseaudio",
         "backlight",
-        "battery#stylus",
-        "battery",
+	"sway/language",
+        // "battery#stylus",
+        // "battery",
+	"upower",
         "tray",
+	"bluetooth",
         "network",
         "clock"
     ],
@@ -51,25 +54,32 @@
         "format": "{icon}",
         "format-icons": ["", ""]
     },
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "full-at": 95,
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+    "sway/language": {
+        "format": "{short} {variant}",
+        "tooltip-format": "{long}"
     },
-    "battery#stylus": {
-        "bat": "wacom_battery_0",
-        "format-full": ""
+    // "battery": {
+    //     "bat": "BAT0",
+    //     "states": {
+    //         // "good": 95,
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "full-at": 95,
+    //     "format": "{capacity}% {icon}",
+    //     "format-charging": "{capacity}% ",
+    //     "format-plugged": "{capacity}% ",
+    //     "format-alt": "{time} {icon}",
+    //     // "format-good": "", // An empty format will hide the module
+    //     "format-full": "",
+    //     "format-icons": ["", "", "", "", ""]
+    // },
+    // "battery#stylus": {
+    //     "bat": "wacom_battery_0",
+    //     "format-full": ""
+    // },
+    "upower": {
+        "icon-size": 12
     },
     "cpu": {
         "format": "{usage}% ",
@@ -103,5 +113,15 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "format-on": "",
+        "format-connected": "",
+        "tooltip-format": "{status}\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}", // ({device_battery_percentage}% battery)",
+        "on-click": "plasmawindowed org.kde.plasma.bluetooth",
+        "on-click-middle": "bluetoothctl connect '88:C9:E8:07:E7:A1'"
     }
 }
