@@ -51,6 +51,7 @@ window#waybar.solo {
 
 #clock,
 #battery,
+#upower,
 #cpu,
 #memory,
 #temperature,
@@ -86,7 +87,7 @@ window#waybar.solo {
     margin: 0 5px;
 }
 
-#battery {
+#battery, #upower {
     background-color: #ffffff;
     color: #000000;
 }
