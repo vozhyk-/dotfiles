@@ -1,0 +1,27 @@
+{
+  /* Command-{left,right} */
+  "@\UF702" = (moveWordLeft:);
+  "@\UF703" = (moveWordRight:);
+  /* Command-Shift-{left,right} */
+  "@$\UF702" = (moveWordLeftAndModifySelection:);
+  "@$\UF703" = (moveWordRightAndModifySelection:);
+  /* Command-{backspace,delete} */
+  "@\U007f" = (deleteWordBackward:);
+  "@\UF728" = (deleteWordForward:);
+  /* Home */
+  "\UF729" = "moveToBeginningOfLine:"; 
+  /* End */
+  "\UF72B" = "moveToEndOfLine:"; 
+  /* Shift-Home */
+  "$\UF729" = "moveToBeginningOfLineAndModifySelection:"; 
+  /* Shift-End */
+  "$\UF72B" = "moveToEndOfLineAndModifySelection:"; 
+  /* Command-Home */
+  "@\UF729" = "moveToBeginningOfDocument:"; 
+  /* Command-End */
+  "@\UF72B" = "moveToEndOfDocument:"; 
+  /* Command-Shift-Home */
+  "@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:";
+  /* Command-Shift-End */
+  "@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";
+}
