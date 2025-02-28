@@ -1,5 +1,3 @@
 #!/bin/bash
 
-cd "$HOME"
-ulimit -c unlimited
-LANG=ja_JP.UTF-8 exec waybar "$@"
+LANG=ja_JP.UTF-8 waybar "$@"
