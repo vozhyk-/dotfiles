@@ -3,12 +3,12 @@
     (dash "2.9.0")
     (pkg-info "0.5.0")
     (request "0.1.0"))
-  :keywords
-  '("gitlab")
-  :authors
+  :commit "68318aca3206d50701039c9aae39734ca29a49f9" :authors
   '(("Nicolas Lamirault" . "nicolas.lamirault@gmail.com"))
   :maintainer
   '("Nicolas Lamirault" . "nicolas.lamirault@gmail.com")
+  :keywords
+  '("gitlab")
   :url "https://github.com/nlamirault/emacs-gitlab")
 ;; Local Variables:
 ;; no-byte-compile: t
