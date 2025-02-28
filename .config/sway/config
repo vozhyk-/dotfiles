@@ -22,7 +22,7 @@ set $file_manager dolphin
 # set $play_pause mocp --toggle-pause
 
 # Clementine:
-set $music clementine
+# set $music clementine
 # set $prev_track clementine --previous
 # set $next_track clementine --next
 # set $play_pause clementine --play-pause
@@ -32,6 +32,8 @@ set $music clementine
 # set $prev_track mpc prev
 # set $next_track mpc next
 # set $play_pause mpc toggle
+
+set $music strawberry
 
 # MPRIS music control
 set $prev_track timeout 0.5 playerctl previous
