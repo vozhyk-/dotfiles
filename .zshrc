@@ -21,3 +21,5 @@ alias sn='ssh neure'
 #chatfile='/home/vozhyk/read'
 ## pounyja teczki
 PS1='%D{%F %T} %B%F{green}%n@%m%k %B%F{blue}%~ %# %b%f%k'
+
+ssh-add -L &>/dev/null || ssh-add
