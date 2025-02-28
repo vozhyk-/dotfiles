@@ -396,6 +396,9 @@ bar {
 	swaybar_command /home/vozhyk/bin/waybar
 }
 
+exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+exec gentoo-pipewire-launcher
+exec mako
 exec rot8
 exec kioclient5 exec /etc/xdg/autostart/geoclue-demo-agent.desktop
 exec redshift-gtk
