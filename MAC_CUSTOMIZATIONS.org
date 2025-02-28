@@ -13,37 +13,30 @@
 ***** H-m: Toggle float for focused window
 ***** H-u: Select fullscreen layout
 ***** H-Z: Relaunch Amethyst
-**** Focus follows mouse
+**** [ ] Focus follows mouse [broken]
+**** Mouse follows focused window
 **** Swap, Resize windows using mouse
 **** Floating
 ***** Float small windows
 ***** com.apple.systempreferences
-***** com.microsoft.autoupdate2
 ** Apptivate
 ** Hammerspoon
 ** iTerm
 ** Karabiner-Elements
 ** Scroll Reverser
+** Firefox
+*** about:config
+**** middlemouse.paste=true
 * brews
 ** coreutils
-** htop
-** pass
-** python@3.8
-** sshfs
-** the_silver_searcher
-** wget
 * brew casks
-** font-dejavu-sans
-** osxfuse
-* Automator scripts
-** Applications/"Emacs from zsh.app"
+** font-dejavu
 
 
 * Preferences
 ** Green
-** [ ] Use font smoothing when available
 ** Dock: Left
-** Dock: Medium size
+** Dock: 30% size
 ** Double-click a window's title bar to: zoom
 ** Automatically hide and show the Dock
 ** [ ] Automatically rearrange Spaces...
