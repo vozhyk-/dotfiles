@@ -15,15 +15,16 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 (require 'ergoemacs-mode)
+(setq ergoemacs-theme nil)
+(setq ergoemacs-keyboard-layout "programmer-dv")
 ;(load-file "~/.emacs.d/elpa/ergoemacs-keybindings-20120814.1528/ergoemacs-mode.el")
 (ergoemacs-mode 1)
 
-(require 'helm-config)
-(global-set-key (kbd "C-o") #'helm-find-files)
-(global-set-key (kbd "M-a") #'helm-M-x)
-(helm-mode 1)
+;(require 'helm-config)
+;(global-set-key (kbd "C-o") #'helm-find-files)
+;(global-set-key (kbd "M-a") #'helm-M-x)
+;(helm-mode 1)
 
 ;(add-to-list 'load-path "~/.emacs.d/elpa/undo-tree-20130516.8")
 (require 'undo-tree)
@@ -33,7 +34,7 @@
 
 (set-face-attribute 'default nil :height 90)
 ;(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa/color-theme-solarized-20130307.1350/")
-(load-theme 'solarized t)
+(load-theme 'solarized-light t)
 
 (global-subword-mode 1)
 (add-hook 'after-init-hook 'global-hungry-delete-mode)
@@ -43,6 +44,11 @@
 (savehist-mode 1)
 
 (save-place-mode 1)
+
+(define-key ergoemacs-user-keymap (kbd "C-_") 'ergoemacs-undo)
+(define-key ergoemacs-user-keymap (kbd "C-?") 'ergoemacs-redo)
+(define-key ergoemacs-user-keymap (kbd "C-s") 'isearch-forward)
+(define-key ergoemacs-user-keymap (kbd "C-r") 'isearch-backward)
 
 (global-set-key (kbd "H-s") 'get-term)
 (global-set-key (kbd "H-S") 'get-term)
